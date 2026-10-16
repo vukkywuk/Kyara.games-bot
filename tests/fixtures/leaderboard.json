@@ -1,0 +1,42 @@
+[
+  {
+    "id": "00000000-0000-4000-8000-000000000039",
+    "pseudo": "player040",
+    "avatar": "https://example.invalid/avatar.png",
+    "frame": "x-pantheon",
+    "owned": 3861,
+    "mythics": 14
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000041",
+    "pseudo": "player042",
+    "avatar": "https://example.invalid/avatar.png",
+    "frame": "r-maitre",
+    "owned": 3816,
+    "mythics": 19
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000043",
+    "pseudo": "player044",
+    "avatar": "https://example.invalid/avatar.png",
+    "frame": "r-maitre",
+    "owned": 3264,
+    "mythics": 15
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000045",
+    "pseudo": "player046",
+    "avatar": "https://example.invalid/avatar.png",
+    "frame": null,
+    "owned": 3242,
+    "mythics": 6
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000047",
+    "pseudo": "player048",
+    "avatar": "https://example.invalid/avatar.png",
+    "frame": "x-negoce",
+    "owned": 3079,
+    "mythics": 7
+  }
+]

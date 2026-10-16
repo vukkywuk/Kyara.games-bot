@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "catalog": {
+    "ready": true,
+    "size": 6736,
+    "target": 6000,
+    "ranked": 8050,
+    "featured": {
+      "fairy-tail": 309,
+      "season:FALL-2026": 180
+    },
+    "fetching": false,
+    "lastError": null
+  }
+}

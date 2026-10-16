@@ -1,0 +1,213 @@
+{
+  "by": "collection",
+  "rows": [
+    {
+      "pos": 1,
+      "id": "00000000-0000-4000-8000-000000000039",
+      "pseudo": "player040",
+      "avatar": "https://example.invalid/avatar.png",
+      "frame": "x-pantheon",
+      "title": "Bibliothécaire",
+      "rank": {
+        "id": "maitre",
+        "kanji": "名人",
+        "label": "Maître"
+      },
+      "badges": [
+        {
+          "id": "moderateur",
+          "label": "Modératrice du comptoir",
+          "description": "Veille sur le chat du marché pour l’équipe Kyara",
+          "kanji": "監",
+          "frame": false
+        },
+        {
+          "id": "pionnier",
+          "label": "Pionnière",
+          "description": "Était là pendant le lancement de Kyara",
+          "kanji": "初",
+          "frame": false
+        },
+        {
+          "id": "fondateur",
+          "label": "Ambassadrice",
+          "description": "A fait venir 5 joueurs pendant le lancement",
+          "kanji": "招",
+          "frame": "gold"
+        },
+        {
+          "id": "verifie",
+          "label": "Compte vérifié",
+          "description": "Compte Discord protégé par la double authentification",
+          "kanji": "証",
+          "frame": false
+        }
+      ],
+      "owned": 3861,
+      "mythics": 14,
+      "points": 20216,
+      "series": 6,
+      "achievements": 20
+    },
+    {
+      "pos": 2,
+      "id": "00000000-0000-4000-8000-000000000041",
+      "pseudo": "player042",
+      "avatar": "https://example.invalid/avatar.png",
+      "frame": "r-maitre",
+      "title": "Bibliothécaire",
+      "rank": {
+        "id": "maitre",
+        "kanji": "名人",
+        "label": "Maître"
+      },
+      "badges": [
+        {
+          "id": "fondateur",
+          "label": "Ambassadeur",
+          "description": "A fait venir 5 joueurs pendant le lancement",
+          "kanji": "招",
+          "frame": "gold"
+        },
+        {
+          "id": "pionnier",
+          "label": "Pionnier",
+          "description": "Était là pendant le lancement de Kyara",
+          "kanji": "初",
+          "frame": false
+        },
+        {
+          "id": "moderateur",
+          "label": "Modérateur du comptoir",
+          "description": "Veille sur le chat du marché pour l’équipe Kyara",
+          "kanji": "監",
+          "frame": false
+        }
+      ],
+      "owned": 3816,
+      "mythics": 19,
+      "points": 20514,
+      "series": 10,
+      "achievements": 22
+    },
+    {
+      "pos": 3,
+      "id": "00000000-0000-4000-8000-000000000043",
+      "pseudo": "player044",
+      "avatar": "https://example.invalid/avatar.png",
+      "frame": "r-maitre",
+      "title": "Touché par les dieux",
+      "rank": {
+        "id": "maitre",
+        "kanji": "名人",
+        "label": "Maître"
+      },
+      "badges": [
+        {
+          "id": "pionnier",
+          "label": "Pionnier",
+          "description": "Était là pendant le lancement de Kyara",
+          "kanji": "初",
+          "frame": false
+        },
+        {
+          "id": "fondateur",
+          "label": "Ambassadeur",
+          "description": "A fait venir 5 joueurs pendant le lancement",
+          "kanji": "招",
+          "frame": "gold"
+        },
+        {
+          "id": "verifie",
+          "label": "Compte vérifié",
+          "description": "Compte Discord protégé par la double authentification",
+          "kanji": "証",
+          "frame": false
+        }
+      ],
+      "owned": 3268,
+      "mythics": 15,
+      "points": 16826,
+      "series": 10,
+      "achievements": 23
+    },
+    {
+      "pos": 4,
+      "id": "00000000-0000-4000-8000-000000000045",
+      "pseudo": "player046",
+      "avatar": "https://example.invalid/avatar.png",
+      "frame": null,
+      "title": "Bibliothécaire",
+      "rank": {
+        "id": "maitre",
+        "kanji": "名人",
+        "label": "Maître"
+      },
+      "badges": [
+        {
+          "id": "pionnier",
+          "label": "Pionnier",
+          "description": "Était là pendant le lancement de Kyara",
+          "kanji": "初",
+          "frame": false
+        },
+        {
+          "id": "verifie",
+          "label": "Compte vérifié",
+          "description": "Compte Discord protégé par la double authentification",
+          "kanji": "証",
+          "frame": false
+        }
+      ],
+      "owned": 3242,
+      "mythics": 6,
+      "points": 15032,
+      "series": 3,
+      "achievements": 17
+    },
+    {
+      "pos": 5,
+      "id": "00000000-0000-4000-8000-000000000047",
+      "pseudo": "player048",
+      "avatar": "https://example.invalid/avatar.png",
+      "frame": "x-negoce",
+      "title": null,
+      "rank": {
+        "id": "expert",
+        "kanji": "鑑定士",
+        "label": "Expert"
+      },
+      "badges": [
+        {
+          "id": "pionnier",
+          "label": "Pionnier",
+          "description": "Était là pendant le lancement de Kyara",
+          "kanji": "初",
+          "frame": false
+        },
+        {
+          "id": "fondateur",
+          "label": "Ambassadeur",
+          "description": "A fait venir 5 joueurs pendant le lancement",
+          "kanji": "招",
+          "frame": "gold"
+        },
+        {
+          "id": "verifie",
+          "label": "Compte vérifié",
+          "description": "Compte Discord protégé par la double authentification",
+          "kanji": "証",
+          "frame": false
+        }
+      ],
+      "owned": 3079,
+      "mythics": 7,
+      "points": 13888,
+      "series": 5,
+      "achievements": 18
+    }
+  ],
+  "me": null,
+  "total": 18212,
+  "catalogSize": 6736
+}

@@ -1,0 +1,81 @@
+{
+  "catalogSize": 6736,
+  "freePacks": {
+    "max": 10,
+    "regenHours": 0.1667,
+    "boosts": [
+      {
+        "id": "boost-muuirq3c",
+        "label": "Week-end boosté",
+        "start": "2026-10-04T22:00:00.000Z",
+        "end": "2026-10-07T22:00:00.000Z",
+        "max": 15
+      },
+      {
+        "id": "boost-muynvuw7",
+        "label": "Merci à vous pour le soutien !",
+        "start": "2026-10-07T22:00:00.000Z",
+        "end": "2026-10-09T22:00:00.000Z",
+        "max": 15
+      },
+      {
+        "id": "boost-maj-1010",
+        "label": "Merci pour votre soutien !",
+        "start": "2026-10-09T23:40:00.000Z",
+        "end": "2026-10-11T22:00:00.000Z",
+        "max": 15
+      }
+    ]
+  },
+  "recycle": {
+    "C": 1,
+    "U": 1,
+    "R": 3,
+    "E": 10,
+    "L": 40,
+    "M": 150
+  },
+  "dropWeights": {
+    "C": 62,
+    "U": 25,
+    "R": 11.4,
+    "E": 1.4,
+    "L": 0.15,
+    "M": 0.025
+  },
+  "pity": {
+    "threshold": 250,
+    "rarity": "M"
+  },
+  "golden": {
+    "every": 10,
+    "slots": [
+      "C",
+      "C",
+      "U",
+      "R",
+      "E"
+    ]
+  },
+  "godPackChance": 0.0005,
+  "godPackSlots": [
+    "E",
+    "E",
+    "E",
+    "E",
+    "M"
+  ],
+  "membershipOpen": false,
+  "guestBoosterLimit": 5,
+  "resets": {
+    "timezone": "Europe/Paris",
+    "dailyHour": 0,
+    "weeklyDay": "monday"
+  },
+  "referral": {
+    "enabled": true,
+    "bonusPacksEach": 3,
+    "minBoostersOpened": 20,
+    "requireDiscord": true
+  }
+}

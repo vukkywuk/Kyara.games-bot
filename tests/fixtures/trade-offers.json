@@ -1,0 +1,64 @@
+[
+  {
+    "id": "2d8212c4-3182-4fdd-b815-cfbfaee7121f",
+    "user": {
+      "id": "00000000-0000-4000-8000-000000000065",
+      "pseudo": "player066"
+    },
+    "characterId": 124142,
+    "wantIds": [
+      14,
+      85,
+      17,
+      53901,
+      40882
+    ],
+    "counterOk": true,
+    "status": "open",
+    "takenWith": null,
+    "taker": null,
+    "createdAt": "2026-10-10T17:51:49.480Z",
+    "expiresAt": "2026-10-12T17:51:49.480Z",
+    "closedAt": null
+  },
+  {
+    "id": "bfe21f15-c8e3-4979-96f0-beb2fa230ca2",
+    "user": {
+      "id": "00000000-0000-4000-8000-000000000067",
+      "pseudo": "player068"
+    },
+    "characterId": 269388,
+    "wantIds": [
+      88991
+    ],
+    "counterOk": true,
+    "status": "open",
+    "takenWith": null,
+    "taker": null,
+    "createdAt": "2026-10-10T17:51:48.572Z",
+    "expiresAt": "2026-10-12T17:51:48.572Z",
+    "closedAt": null
+  },
+  {
+    "id": "f4020dd9-b666-40f1-aabf-7bd232da2009",
+    "user": {
+      "id": "00000000-0000-4000-8000-000000000069",
+      "pseudo": "player070"
+    },
+    "characterId": 779,
+    "wantIds": [
+      66573,
+      282093,
+      282094,
+      65525,
+      264336
+    ],
+    "counterOk": true,
+    "status": "open",
+    "takenWith": null,
+    "taker": null,
+    "createdAt": "2026-10-10T17:51:45.965Z",
+    "expiresAt": "2026-10-12T17:51:45.965Z",
+    "closedAt": null
+  }
+]

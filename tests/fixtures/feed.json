@@ -1,0 +1,126 @@
+[
+  {
+    "userId": "00000000-0000-4000-8000-000000000049",
+    "pseudo": "player050",
+    "avatar": "https://example.invalid/avatar.png",
+    "frame": null,
+    "badges": [
+      {
+        "id": "pionnier",
+        "label": "Pionnier",
+        "description": "Était là pendant le lancement de Kyara",
+        "kanji": "初",
+        "frame": false
+      }
+    ],
+    "characterId": 90181,
+    "name": "Beatrice",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b90181-wRPm0OEaucmw.png",
+    "series": "Re:ZERO -Starting Life in Another World",
+    "rarity": "L",
+    "at": "2026-10-10T17:51:41.252Z",
+    "godPack": false
+  },
+  {
+    "userId": "00000000-0000-4000-8000-000000000051",
+    "pseudo": "player052",
+    "avatar": "https://example.invalid/avatar.png",
+    "frame": null,
+    "badges": [
+      {
+        "id": "pionnier",
+        "label": "Pionnier",
+        "description": "Était là pendant le lancement de Kyara",
+        "kanji": "初",
+        "frame": false
+      },
+      {
+        "id": "verifie",
+        "label": "Compte vérifié",
+        "description": "Compte Discord protégé par la double authentification",
+        "kanji": "証",
+        "frame": false
+      }
+    ],
+    "characterId": 35510,
+    "name": "Buntarou Mori",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b35510-qMAnMK0udakL.jpg",
+    "series": "The Climber",
+    "rarity": "L",
+    "at": "2026-10-10T17:51:39.517Z",
+    "godPack": false
+  },
+  {
+    "userId": "00000000-0000-4000-8000-000000000053",
+    "pseudo": "player054",
+    "avatar": "https://example.invalid/avatar.png",
+    "frame": null,
+    "badges": [
+      {
+        "id": "pionnier",
+        "label": "Pionnière",
+        "description": "Était là pendant le lancement de Kyara",
+        "kanji": "初",
+        "frame": false
+      },
+      {
+        "id": "verifie",
+        "label": "Compte vérifié",
+        "description": "Compte Discord protégé par la double authentification",
+        "kanji": "証",
+        "frame": false
+      }
+    ],
+    "characterId": 69,
+    "name": "Maes Hughes",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b69-MRetSG8Qevvu.png",
+    "series": "Fullmetal Alchemist",
+    "rarity": "L",
+    "at": "2026-10-10T17:51:38.907Z",
+    "godPack": false
+  },
+  {
+    "userId": "00000000-0000-4000-8000-000000000055",
+    "pseudo": "player056",
+    "avatar": "https://example.invalid/avatar.png",
+    "frame": null,
+    "badges": [
+      {
+        "id": "pionnier",
+        "label": "Pionnier",
+        "description": "Était là pendant le lancement de Kyara",
+        "kanji": "初",
+        "frame": false
+      }
+    ],
+    "characterId": 88937,
+    "name": "Koutarou Bokuto",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b88937-2GSqkX9TIzYy.png",
+    "series": "HAIKYU!!",
+    "rarity": "L",
+    "at": "2026-10-10T17:51:38.569Z",
+    "godPack": false
+  },
+  {
+    "userId": "00000000-0000-4000-8000-000000000057",
+    "pseudo": "player058",
+    "avatar": "https://example.invalid/avatar.png",
+    "frame": null,
+    "badges": [
+      {
+        "id": "pionnier",
+        "label": "Pionnier",
+        "description": "Était là pendant le lancement de Kyara",
+        "kanji": "初",
+        "frame": false
+      }
+    ],
+    "characterId": 89363,
+    "name": "Darkness",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b89363-mm21Ll4NegUD.png",
+    "series": "KONOSUBA -God's blessing on this wonderful world!",
+    "rarity": "L",
+    "at": "2026-10-10T17:51:35.536Z",
+    "godPack": false
+  }
+]

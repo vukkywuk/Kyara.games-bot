@@ -1,0 +1,72 @@
+{
+  "name": "kyara-games-bot",
+  "version": "0.3.0",
+  "description": "Typed automation bot and CLI for your own Kyara.games account (HTTP API + Playwright).",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "kyara": "dist/cli/bin.js"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx src/cli/bin.ts",
+    "build": "tsc -p tsconfig.build.json && npm run web:build && npm run ext:build",
+    "start": "node dist/cli/bin.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p web/tsconfig.json && tsc -p extension/tsconfig.json && tsc -p desktop/tsconfig.json",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "browser:install": "playwright install chromium",
+    "build:server": "tsc -p tsconfig.build.json",
+    "serve": "tsx src/cli/bin.ts serve",
+    "web:dev": "vite --config web/vite.config.ts",
+    "web:build": "vite build --config web/vite.config.ts",
+    "ext:build": "node scripts/build-extension.mjs",
+    "test:e2e": "node scripts/run-e2e.mjs",
+    "desktop:build": "node scripts/build-desktop.mjs",
+    "desktop:dev": "npm run web:build && npm run desktop:build && node scripts/run-desktop.mjs",
+    "desktop:dist": "npm run web:build && npm run desktop:build && electron-builder --win nsis --config desktop/electron-builder.json"
+  },
+  "dependencies": {
+    "@fontsource/unbounded": "^5.3.0",
+    "@fontsource/zen-kaku-gothic-new": "^5.3.0",
+    "@tanstack/react-query": "^5.104.1",
+    "@tanstack/react-virtual": "^3.14.14",
+    "commander": "^15.0.0",
+    "lucide-react": "^1.55.0",
+    "motion": "^14.1.0",
+    "playwright": "^1.64.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-router": "^7.18.4",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
+    "@types/chrome": "^0.3.5",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "electron": "^44.7.2",
+    "electron-builder": "^26.15.3",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.12.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.13.0",
+    "jsdom": "^29.1.1",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.71.1",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.3"
+  }
+}

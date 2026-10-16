@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kyara Bridge</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="head">
+      <span class="seal" aria-hidden="true">橋</span>
+      <div>
+        <h1>Kyara Bridge</h1>
+        <p class="sub" id="sub">Connects your kyara.games tab to the bot on this computer.</p>
+      </div>
+    </header>
+
+    <section aria-labelledby="status-h">
+      <h2 id="status-h" class="visually-hidden">Status</h2>
+      <ul class="rows" id="rows" aria-live="polite"></ul>
+    </section>
+
+    <p class="note" id="note" role="status" hidden></p>
+    <p class="error" id="error" role="alert" hidden></p>
+
+    <form id="pair-form" class="pair" hidden novalidate>
+      <p class="hint">
+        Run <code>kyara serve</code>, open the app, go to <strong>Session</strong> and create a pairing code. Type it here.
+      </p>
+      <label for="code">Pairing code</label>
+      <input id="code" name="code" autocomplete="off" spellcheck="false" maxlength="9" placeholder="ABCD-EFGH" required />
+      <details>
+        <summary>Advanced</summary>
+        <label for="port">Bot port</label>
+        <input id="port" name="port" inputmode="numeric" value="47321" />
+        <label for="label">Name for this browser</label>
+        <input id="label" name="label" maxlength="60" />
+      </details>
+      <button type="submit" class="primary" id="pair-btn">Pair with the bot</button>
+    </form>
+
+    <div id="paired-actions" class="actions" hidden>
+      <button type="button" class="primary" id="resync">Sync now</button>
+      <button type="button" class="quiet" id="unpair">Unpair</button>
+    </div>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

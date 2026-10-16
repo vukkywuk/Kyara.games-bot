@@ -1,0 +1,45 @@
+{
+  "average": 4.7,
+  "count": 2195,
+  "items": [
+    {
+      "id": "8488e4a4-8c35-4f54-8f89-ebfdaaf205aa",
+      "rating": 5,
+      "text": "Sample review text",
+      "reply": null,
+      "createdAt": "2026-10-10T17:49:36.690Z",
+      "user": {
+        "id": "00000000-0000-4000-8000-000000000059",
+        "pseudo": "player060",
+        "avatar": null,
+        "frame": null
+      }
+    },
+    {
+      "id": "31550f48-2236-4ced-ae55-90c9ca13e4a6",
+      "rating": 4,
+      "text": "Sample review text",
+      "reply": null,
+      "createdAt": "2026-10-10T17:46:19.421Z",
+      "user": {
+        "id": "00000000-0000-4000-8000-000000000061",
+        "pseudo": "player062",
+        "avatar": "https://example.invalid/avatar.png",
+        "frame": null
+      }
+    },
+    {
+      "id": "3fbe20eb-0279-4ae4-b529-b425a4247291",
+      "rating": 5,
+      "text": "Sample review text",
+      "reply": null,
+      "createdAt": "2026-10-10T17:45:54.759Z",
+      "user": {
+        "id": "00000000-0000-4000-8000-000000000063",
+        "pseudo": "player064",
+        "avatar": "https://example.invalid/avatar.png",
+        "frame": null
+      }
+    }
+  ]
+}

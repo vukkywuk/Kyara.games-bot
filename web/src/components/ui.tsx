@@ -7,8 +7,6 @@ export const cx = (...c: Array<string | false | null | undefined>) => c.filter(B
 
 type Icon = ComponentType<SVGProps<SVGSVGElement> & { size?: number | string; strokeWidth?: number | string }>;
 
-// ------------------------------------------------------------------ buttons
-
 type Variant = 'primary' | 'quiet' | 'ghost' | 'danger';
 const variants: Record<Variant, string> = {
   // primary is paper on ink: colour stays reserved for rarity
@@ -62,8 +60,6 @@ export function IconButton({ icon: I, label, className, size = 36, ...rest }: Om
   );
 }
 
-// ------------------------------------------------------------------ layout
-
 export function Panel({ title, action, children, className, bodyClass, id }: { title?: ReactNode; action?: ReactNode; children: ReactNode; className?: string; bodyClass?: string; id?: string }) {
   const hid = useId();
   return (
@@ -94,8 +90,6 @@ export function PageHeader({ title, description, actions }: { title: string; des
     </div>
   );
 }
-
-// ------------------------------------------------------------------ states
 
 export function Skeleton({ className, style }: { className?: string; style?: React.CSSProperties }) {
   return <div aria-hidden className={cx('skeleton rounded-[var(--radius-ctl)]', className)} style={style} />;
@@ -139,8 +133,6 @@ export function StatusDot({ tone, label }: { tone: Tone; label?: string }) {
     </span>
   );
 }
-
-// ------------------------------------------------------------------ inputs
 
 export function Field({ label, hint, error, children, htmlFor }: { label: string; hint?: ReactNode; error?: string | null; children: ReactNode; htmlFor: string }) {
   return (

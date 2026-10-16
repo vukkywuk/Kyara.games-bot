@@ -94,8 +94,9 @@ describe.skipIf(!enabled)('browser extension end to end (stubbed kyara.games)', 
     const popup = await ctx.newPage();
     await popup.goto(`chrome-extension://${extId}/popup.html`);
     await expect.poll(() => popup.locator('#rows').innerText(), { timeout: 15_000 }).toContain('Connected on port');
+    // the account row can arrive a moment after the connection row
+    await expect.poll(() => popup.locator('body').innerText(), { timeout: 15_000 }).toContain('Logged in');
     const text = await popup.locator('body').innerText();
-    expect(text).toContain('Logged in');
     expect(text).not.toContain(TOKEN);
     expect(text).not.toContain(PASS.pass);
     // the pairing secret lives in storage.local; the session material is not persisted there

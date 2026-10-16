@@ -38,7 +38,7 @@ function Shelf() {
   const [selected, setSelected] = useState<string | null>(null);
   const now = useNow(1000);
   const views = useMemo(() => packs.data?.packs ?? [], [packs.data]);
-  // The first pack you can open is preselected ONCE; it never changes under you after an opening.
+  // The first openable pack is preselected once; the selection never moves after an opening.
   const initial = views.find((v) => v.access?.openable && v.affordable)?.pack.id ?? views[0]?.pack.id ?? null;
   if (selected === null && initial !== null) setSelected(initial);
   // Results live here, outside the per-pack panel, so a refetch or a click elsewhere cannot lose them.
@@ -346,7 +346,6 @@ function FlipCard({ card, revealed, color }: { card: PulledCard; revealed: boole
       transition={{ rotateY: { duration: 0.5, ease: [0.2, 0.8, 0.2, 1] }, y: { duration: 0.3 }, opacity: { duration: 0.3 } }}
       aria-hidden={!revealed}
     >
-      {/* face */}
       <div className="absolute inset-0 [backface-visibility:hidden]">
         <CharacterArt character={card} eager sizes="160px" />
         <span aria-hidden className="absolute inset-x-0 bottom-0 h-[3px]" style={{ background: r.color }} />
@@ -358,7 +357,6 @@ function FlipCard({ card, revealed, color }: { card: PulledCard; revealed: boole
           <p className="truncate text-xs text-muted">{card.series}</p>
         </div>
       </div>
-      {/* back */}
       <div className="absolute inset-0 grid place-items-center rounded-[var(--radius-art)] bg-ink-2 [backface-visibility:hidden] [transform:rotateY(180deg)]" style={{ boxShadow: `inset 0 0 0 2px ${color}` }}>
         <span className="rotate-[-4deg] text-4xl font-bold opacity-60" style={{ color }}>
           キ

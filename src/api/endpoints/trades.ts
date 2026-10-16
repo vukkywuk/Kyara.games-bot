@@ -25,7 +25,6 @@ export function assertUuid(id: string, what: string): string {
 export class TradeEndpoints {
   constructor(private readonly http: KyaraHttpClient) {}
 
-  // ---- reads ----
   chat = (room: number, limit = 50, before?: string) =>
     this.http.get('/market/chat', ChatPageSchema, { auth: 'optional', query: { room, limit, before } });
   chatRooms = () => this.http.get('/market/chat/rooms', ChatRoomsSchema, { auth: 'optional' });
@@ -36,8 +35,8 @@ export class TradeEndpoints {
   /** At most 200 ids per call, like the site. */
   fairPrices = (ids: number[]) => this.http.get('/fair-play/prices', FairPricesSchema, { auth: 'required', query: { ids: ids.slice(0, 200).join(',') } });
 
-  // ---- state-changing (through ActionGuard only) ----
-  /** The site sends its anti-bot pass with proposals; it is attached when one is stored. */
+  // Writes: call through ActionGuard only.
+  /** Like the site, sends the anti-bot pass when one is stored. */
   propose = (body: ProposeBody, pass: string | null = null) => this.http.mutate('POST', '/trades', ProposeResultSchema, { body, headers: passHeader(pass) });
   cancel = (tradeId: string) => this.http.mutate('POST', `/trades/${assertUuid(tradeId, 'Trade id')}/cancel`, TradeActionResultSchema);
 }

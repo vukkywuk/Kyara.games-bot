@@ -7,23 +7,23 @@ import { formatDuration } from '../utils/time.js';
 import type { Notifier } from './Notifier.js';
 
 export interface AutoBidPolicy {
-  /** Must be true in config AND requested on the command line / monitor. */
+  /** Both the monitor and the global setting (Settings or .env) must allow it. */
   enabled: boolean;
   /** Most chakra this monitor may have committed at once: held by leading bids plus copies won. */
   budget: number;
-  /** Your maximum per copy. Kyara bids are proxy bids, so this is sent once as the maximum. */
+  /** Maximum per copy. Kyara bids are proxy bids, so this is sent once as the ceiling. */
   maxBid: number;
-  /** Only bid when the auction ends within this window (avoids showing your hand early). */
+  /** Only bid on auctions ending within this window. */
   onlyWithinMs: number;
   /** Stop bidding once this many copies are won or currently led. */
   copies: number;
 }
 
-/** A listing this monitor bid on (or that already carried one of your bids). */
+/** A listing this monitor bid on, or that already carried one of the user's bids. */
 export interface TrackedBid {
   id: string;
   name: string;
-  /** Your maximum on it (held while leading). */
+  /** The maximum sent; Kyara holds it from the balance while the bid leads. */
   amount: number;
   endsAt: string;
   leading: boolean | null;
@@ -32,7 +32,7 @@ export interface TrackedBid {
 export interface WonCopy {
   id: string;
   name: string;
-  /** Final price when Kyara reports it, else your maximum (an upper bound). */
+  /** Final price when Kyara reports it, else the maximum sent (an upper bound). */
   price: number;
   at: string;
 }
@@ -68,9 +68,9 @@ const MAX_LOOKUPS_PER_TICK = 10;
  * requires explicit opt-in, a budget, a maximum and a copies target, and goes through the
  * same guarded `MarketModule.bid` path as a manual bid.
  *
- * Kyara bids are proxy bids: the server raises your bid for you up to your maximum. So the
- * monitor sends your maximum once per auction (in its final window), follows whether you
- * are still leading, and counts the auctions you win toward the copies target.
+ * Kyara bids are proxy bids: the server raises the bid automatically up to the maximum. So
+ * the monitor sends the maximum once per auction, in its final window, follows whether the
+ * bid still leads, and counts auctions won toward the copies target.
  */
 export class AuctionMonitor {
   private seen = new Set<string>();
@@ -152,7 +152,7 @@ export class AuctionMonitor {
   /** Updates bids from fresh listings, and settles auctions that ended (won or lost). */
   private async settle(items: Listing[], now: number): Promise<void> {
     const byId = new Map(items.map((l) => [l.id, l]));
-    // listings that already carry one of your bids (placed by hand or before a restart) count too
+    // listings already carrying one of the user's bids (placed by hand or before a restart) count too
     for (const l of items) {
       if (l.type === 'auction' && l.myMaxBid !== null && !this.tracked.has(l.id) && this.matchesWatch(l)) {
         this.tracked.set(l.id, { id: l.id, name: l.character.name, amount: l.myMaxBid, endsAt: l.endsAt, leading: l.leading });
@@ -216,8 +216,8 @@ export class AuctionMonitor {
       const max = Math.min(p.maxBid, this.opts.filter.maxPrice ?? Infinity);
       const amount = l.buyoutPrice !== null ? Math.min(max, l.buyoutPrice - 1) : max;
       const min = l.minNextBid ?? listingPrice(l) + 1;
-      if (amount < min) continue; // already above your maximum
-      if (l.myMaxBid !== null && amount <= l.myMaxBid) continue; // your maximum is already in and was beaten
+      if (amount < min) continue; // already above the maximum
+      if (l.myMaxBid !== null && amount <= l.myMaxBid) continue; // this maximum was already sent and beaten
       const extra = amount - (l.myMaxBid ?? 0);
       if (this.reservedChakra + extra > p.budget) {
         this.log.info(`Auto-bid skipped on ${l.character.name}: would exceed the monitor budget (${this.reservedChakra}/${p.budget}).`);

@@ -2,11 +2,10 @@ import { z } from 'zod';
 import { CharacterSchema, IsoDate } from './common.js';
 
 /*
- * Session endpoints. Shapes were first derived from the site's frontend, then CONFIRMED
- * on 2026-10-10 against a real account with `kyara api verify --shapes` (GET endpoints).
- * Write endpoints (open, claim, bid, buy, pass) remain INFERRED until first used live.
- * Only the fields the bot needs are required; the rest are optional so small server
- * changes do not break the bot.
+ * Session endpoints. GET shapes were CONFIRMED on 2026-10-10 against a real account
+ * (`kyara api verify --shapes`); open and claim responses have since been parsed live.
+ * The pass response is still INFERRED from the site's client. Only the fields the bot
+ * reads are required, so small server changes do not break parsing.
  */
 
 /** GET /api/me — also embedded as `user` in open/claim/bid/buy results. */
@@ -22,7 +21,7 @@ export const MeSchema = z.looseObject({
   /** Boosters until the next golden one (1 = next is golden). */
   goldenIn: z.number().nullish(),
   boostersOpened: z.number().optional(),
-  /** Chakra reserved by bids / buy orders. NOT included in `chakra` (the site shows it as "+ X mis de côté"). */
+  /** Chakra reserved by bids / buy orders. Not included in `chakra` (the site shows it as "+ X mis de côté"). */
   chakraHeld: z.number().optional(),
   /** When the next free pack regenerates (only meaningful while below the maximum). */
   nextFreeAt: z.string().nullish(),
@@ -108,7 +107,7 @@ export type Progress = z.infer<typeof ProgressSchema>;
 export const CLAIM_KINDS = ['all', 'streak', 'series', 'achievement'] as const;
 export type ClaimKind = (typeof CLAIM_KINDS)[number];
 
-/** POST /api/me/progress/claim → `{ progress, user, gained: { chakra?, bonusPacks?, grants } }`. */
+/** POST /api/me/progress/claim -> `{ progress, user, gained: { chakra?, bonusPacks?, grants } }`. */
 export const ClaimResultSchema = z.looseObject({
   progress: ProgressSchema,
   user: MeSchema,
@@ -144,7 +143,7 @@ export const OpenManyResultSchema = z.looseObject({
 });
 export type OpenManyResult = z.infer<typeof OpenManyResultSchema>;
 
-/** POST /api/auth/pass → stored by the site as `kyara_pass` = `{ pass, expiresAt }`. */
+/** POST /api/auth/pass -> stored by the site as `kyara_pass` = `{ pass, expiresAt }`. */
 export const PassSchema = z.looseObject({ pass: z.string().min(1), expiresAt: z.number() });
 export type Pass = z.infer<typeof PassSchema>;
 

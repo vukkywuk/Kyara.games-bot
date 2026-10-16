@@ -172,8 +172,6 @@ export function ConfirmDialog({
   );
 }
 
-// ------------------------------------------------------------------ toasts
-
 type ToastKind = 'success' | 'info' | 'warn' | 'error';
 interface Toast {
   id: number;

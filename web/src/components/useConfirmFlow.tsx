@@ -8,8 +8,8 @@ type Mode = 'dryRun' | 'confirm';
 
 /**
  * Two-step action flow shared by bids, purchases and pack openings:
- *   1. dry run on the server (same checks as the real call) → exact summary and cost;
- *   2. the user confirms → one guarded call. No retry on an uncertain outcome.
+ *   1. dry run on the server (same checks as the real call) -> exact summary and cost;
+ *   2. the user confirms -> one guarded call. No retry on an uncertain outcome.
  */
 export function useConfirmFlow<V, R>(opts: {
   run: (v: V & { mode: Mode }) => Promise<ActionResponse<R>>;

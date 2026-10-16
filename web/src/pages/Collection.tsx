@@ -25,7 +25,7 @@ export function CollectionPage() {
 
   const owned = useMemo(() => new Map((col.data?.entries ?? []).filter((e) => e.qty > 0).map((e) => [e.characterId, e])), [col.data]);
   const qtyMap = useMemo(() => new Map([...owned].map(([id, e]) => [id, e.qty])), [owned]);
-  // in your own collection every card is owned: only extra copies are worth a badge
+  // every card in the user's own collection is owned: only extra copies are worth a badge
   const dupBadges = useMemo(() => new Map([...qtyMap].filter(([, q]) => q > 1)), [qtyMap]);
   const items = useMemo(() => {
     const byId = new Map((chars.data ?? []).map((c) => [c.id, c]));

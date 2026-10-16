@@ -57,7 +57,7 @@ export function registerInfo(program: Command): void {
       const bot = getBot(cmd);
       const [news, log] = await Promise.all([bot.api.catalog.catalogNews(), bot.api.catalog.changelog()]);
       if (isJson(cmd)) return printJson({ catalog: news, changelog: log });
-      print(`Catalogue ${news.id}: ${news.before} → ${news.after} characters${news.addedCount ? ` (+${news.addedCount})` : ''}.`);
+      print(`Catalogue ${news.id}: ${news.before} -> ${news.after} characters${news.addedCount ? ` (+${news.addedCount})` : ''}.`);
       for (const c of log.slice(0, 3)) {
         print(`\n${c.publishedAt?.slice(0, 10) ?? ''}  ${c.title}`);
         for (const i of c.items.slice(0, 6)) print(`  - ${i.text}`);

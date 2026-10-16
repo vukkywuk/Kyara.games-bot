@@ -125,7 +125,7 @@ export interface MonitorStatus {
   ticks: number;
   /** Chakra reserved by this monitor's auto-bids since it started. */
   reserved: number;
-  /** Effective auto-bid (after the global .env gate), or null when off. */
+  /** Effective auto-bid after the global setting (Settings or .env), or null when off. */
   autoBid: { budget: number; maxBid: number; copies: number } | null;
   /** Copies won and currently led by this monitor's bids (persisted across restarts). */
   copies: { won: number; leading: number; target: number | null } | null;
@@ -148,9 +148,9 @@ interface Runtime {
 }
 
 /**
- * Runs the existing monitors (AuctionMonitor, AccountWatcher) inside the server process,
- * with persisted configuration and observable state. A monitor shows "running" only while
- * its loop is actually alive.
+ * Runs the monitors (AuctionMonitor, AccountWatcher, TradeMonitor) inside the server process,
+ * with persisted configuration and progress. A monitor shows "running" only while its loop
+ * is alive.
  */
 export class MonitorService {
   private monitors: MonitorConfig[] = [];
@@ -267,8 +267,6 @@ export class MonitorService {
     await Promise.allSettled([...this.runtimes.keys()].map((id) => this.stop(id)));
   }
 
-  // ---------------------------------------------------------------- internals
-
   private validate(input: unknown): MonitorInput {
     const parsed = MonitorInputSchema.safeParse(input);
     if (!parsed.success) {
@@ -283,7 +281,7 @@ export class MonitorService {
     return m;
   }
 
-  /** The .env gate always wins over the monitor's own settings. */
+  /** The global auto-bid setting (Settings or .env) always wins over the monitor's own. */
   private effectiveAutoBid(m: MonitorConfig): { value: { budget: number; maxBid: number; copies: number } | null; blocked: string | null } {
     if (m.kind !== 'auctions' || !m.params.autoBid.enabled) return { value: null, blocked: null };
     const env = this.bot.config.autoBid;
@@ -297,7 +295,7 @@ export class MonitorService {
     return { value: { budget, maxBid, copies: ab.copies }, blocked: null };
   }
 
-  /** Trade monitors send only when .env allows it; otherwise they run in preview. */
+  /** Trade monitors send only when Settings (or .env) allow it; otherwise they run in preview. */
   private effectiveTrade(m: MonitorConfig): { mode: 'preview' | 'auto'; budget: number; blocked: string | null } | null {
     if (m.kind !== 'trades') return null;
     const env = this.bot.config.autoTrade;

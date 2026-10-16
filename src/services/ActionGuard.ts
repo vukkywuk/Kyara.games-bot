@@ -61,7 +61,7 @@ const GATE_CODES = new Set(['catalog_loading', 'starting', 'maintenance']);
 
 /**
  * The single path through which state-changing operations run.
- *   validate → budget → duplicate/unknown check → preflight → budget → confirm → lock → execute → record
+ *   validate -> budget -> duplicate/unknown check -> preflight -> budget -> confirm -> lock -> execute -> record
  * Mutations are sent once. A failure where the server may have applied the change is
  * recorded as `unknown` and surfaced as AmbiguousOutcomeError; it is never retried blindly.
  */
@@ -160,7 +160,7 @@ export class ActionGuard {
       result = await spec.execute();
     } catch (err) {
       const ambiguous = isAmbiguous(err);
-      // A failed re-send says nothing about the ORIGINAL attempt: a resumed action stays unknown.
+      // A failed re-send says nothing about the original attempt: a resumed action stays unknown.
       this.journal.finish(rec.id, ambiguous || resume ? 'unknown' : 'failed', { error: (err as Error).message });
       if (ambiguous) {
         throw new AmbiguousOutcomeError(

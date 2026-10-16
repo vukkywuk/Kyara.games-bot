@@ -15,11 +15,10 @@ import {
 import type { ClaimKind } from '../schemas/account.js';
 import { UsageError } from '../../utils/errors.js';
 
-/** Endpoints that need a session. Shapes are INFERRED until verified with `kyara api verify`. */
+/** Endpoints that need a session. Verification status per endpoint: docs/api-reference.md. */
 export class AccountEndpoints {
   constructor(private readonly http: KyaraHttpClient) {}
 
-  // ---- reads ----
   me = () => this.http.get('/me', MeSchema, { auth: 'required' });
   bootstrap = () => this.http.get('/me/bootstrap', BootstrapSchema, { auth: 'required' });
   collection = () => this.http.get('/me/collection', CollectionSchema, { auth: 'required', query: { lean: 1 } });
@@ -30,9 +29,9 @@ export class AccountEndpoints {
   notifications = (unreadOnly = false, limit = 30) =>
     this.http.get('/me/notifications', z.unknown(), { auth: 'required', query: { unread: unreadOnly ? 1 : undefined, limit } });
 
-  // ---- state-changing (call through ActionGuard, never directly from UI code) ----
+  // Writes: call through ActionGuard only.
 
-  /** Exchanges a Turnstile token for a ~30 min "pass" required to open packs. */
+  /** Exchanges a Turnstile token for the ~30 min pass Kyara requires on pack openings while Turnstile is enabled. */
   createPass = (turnstileToken: string) =>
     this.http.mutate('POST', '/auth/pass', PassSchema, { body: { turnstile: turnstileToken } });
 

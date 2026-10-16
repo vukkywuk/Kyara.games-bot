@@ -30,7 +30,7 @@ export interface SearchResult<T> {
   items: T[];
 }
 
-/** Lowercase, strip accents and punctuation: "Satoru Gojō" → "satoru gojo". */
+/** Lowercase, strip accents and punctuation: "Satoru Gojō" -> "satoru gojo". */
 export function normalize(s: string): string {
   return s
     .normalize('NFKD')

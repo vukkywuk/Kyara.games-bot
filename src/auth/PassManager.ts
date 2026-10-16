@@ -21,17 +21,17 @@ export function validatePass(value: unknown, now = Date.now()): { pass: string; 
 export const IMPORT_PASS_HELP = [
   'Opening packs needs a pass from your normal browser:',
   '  1. Open https://kyara.games there, logged in, and keep the tab visible (the site renews its pass every minute).',
-  '  2. DevTools → Application → Local Storage → https://kyara.games: copy "kyara_pass" (and "kyara_device").',
+  '  2. DevTools -> Application -> Local Storage -> https://kyara.games: copy "kyara_pass" (and "kyara_device").',
   '  3. Run:  npm run dev -- session import-pass --device-id <kyara_device>   and paste the pass.',
   'A pass lasts about 30 minutes. (--browser-pass tries Cloudflare in the bot browser instead; Cloudflare usually refuses it.)',
 ].join('\n');
 
 /**
- * Manages the short-lived "laissez-passer" the server requires to open packs.
- * It comes from `POST /auth/pass` with a Cloudflare Turnstile token. Two legitimate sources:
- * - imported: the pass your own browser obtained through the site's normal flow;
- * - browser: the bot's browser renders the Turnstile widget (Cloudflare refuses the
- *   automated browser with error 600010; nothing here tries to evade that).
+ * The short-lived pass ("laissez-passer") Kyara requires on pack openings while Turnstile is
+ * enabled. It comes from `POST /auth/pass` with a Turnstile token. The usual source is the
+ * user's own browser (imported, or synced by the extension or the app's Kyara window); the
+ * bot's own browser can render the widget on request, but Cloudflare refuses automated
+ * browsers (error 600010) and nothing here works around that.
  */
 export class PassManager {
   constructor(
@@ -117,9 +117,9 @@ export class PassManager {
 export const passHeader = (pass: string | null): Record<string, string> => (pass ? { 'x-pass': pass } : {});
 
 /**
- * Sends a write that the site protects with its Turnstile pass, the way the site does:
- * the stored pass is attached when still valid (Kyara may not require it for every account).
- * A `pass_required` answer is a definite refusal (nothing was applied); it is reported, never worked around.
+ * Sends a write the site protects with its pass, as the site does: the stored pass is
+ * attached when valid, since Kyara does not always require it. `pass_required` means nothing
+ * was applied; it is raised as a HumanVerificationError and never retried here.
  */
 export async function withStoredPass<T>(passes: Pick<PassManager, 'cachedPass' | 'invalidate'> | undefined, send: (pass: string | null) => Promise<T>, what: string): Promise<T> {
   try {

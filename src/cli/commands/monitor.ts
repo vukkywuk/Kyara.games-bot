@@ -128,7 +128,7 @@ export function registerMonitor(program: Command): void {
           const d = diffCollections(prev, now);
           for (const a of d.added) notifier.notify({ type: 'collection.new', title: `New: ${name(a.characterId)}`, data: a });
           for (const r of d.removed) notifier.notify({ type: 'collection.gone', title: `Gone: ${name(r.characterId)}`, data: r });
-          for (const c of d.changed) notifier.notify({ type: 'collection.qty', title: `${name(c.characterId)}: ${c.before} → ${c.after}`, data: c });
+          for (const c of d.changed) notifier.notify({ type: 'collection.qty', title: `${name(c.characterId)}: ${c.before} -> ${c.after}`, data: c });
           prev = now;
         },
         { intervalMs: parseDuration(o.interval), minIntervalMs: MIN_INTERVAL.collection, maxDurationMs: parseDuration(o.duration), signal: ac.signal, log: bot.log.child('poll') },

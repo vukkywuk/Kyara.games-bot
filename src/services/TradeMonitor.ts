@@ -70,7 +70,7 @@ export const emptyTradeProgress = (): TradeProgress => ({ lastSeen: {}, sent: []
  * Reads the market chat for structured trade requests (a card tagged "seek" or "trade") and
  * answers them with a trade proposal planned by `planTrade`: only spare copies, only trades the
  * site's fair-play check calls fair, within pending / hourly / per-player / budget limits.
- * It never posts in the chat, and never accepts or declines trades for you.
+ * It never posts in the chat and never accepts or declines trades.
  */
 export class TradeMonitor {
   private p: TradeProgress;
@@ -115,8 +115,6 @@ export class TradeMonitor {
   private active(): boolean {
     return !this.opts.isActive || this.opts.isActive();
   }
-
-  // ------------------------------------------------------------ my proposals
 
   /** Matches the bot's proposals with Kyara's list, reports outcomes and cancels stale ones. */
   private async followUp(outgoing: Trade[], now: number): Promise<void> {
@@ -171,8 +169,6 @@ export class TradeMonitor {
     }
   }
 
-  // ------------------------------------------------------------ chat
-
   private async readChat(now: number): Promise<TradeRequest[]> {
     const rooms = this.opts.rooms ?? (await this.api.trades.chatRooms()).rooms.map((r) => r.room);
     const out = new Map<string, TradeRequest>();
@@ -201,8 +197,6 @@ export class TradeMonitor {
     const c = a.data.character;
     return { kind, messageId: m.id, room: m.room, at: m.createdAt, user: { id: m.author.id, pseudo: m.author.pseudo }, character: { id: c.id, name: c.name, rarity: c.rarity } };
   }
-
-  // ------------------------------------------------------------ answering
 
   private async answer(requests: TradeRequest[], outgoing: Trade[], chakra: number, now: number): Promise<void> {
     const { rules, limits } = this.opts;

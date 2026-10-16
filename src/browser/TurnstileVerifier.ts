@@ -11,7 +11,7 @@ export interface HumanVerifier {
  * Produces a Cloudflare Turnstile token the same way the site does: by rendering the
  * official widget (appearance "interaction-only") on a kyara.games page in a real browser.
  * Usually Cloudflare passes silently; when it wants a click, the checkbox appears in the
- * visible window and YOU complete it. Nothing here solves, skips or spoofs the challenge.
+ * visible window and the user completes it. Nothing here solves, skips or spoofs the challenge.
  */
 export class BrowserTurnstileVerifier implements HumanVerifier {
   constructor(
@@ -39,7 +39,7 @@ export class BrowserTurnstileVerifier implements HumanVerifier {
 }
 
 /**
- * The in-page code, as plain JavaScript text. It is deliberately NOT a TypeScript function
+ * The in-page code, as plain JavaScript text. It is deliberately not a TypeScript function
  * passed to page.evaluate: dev tooling (tsx/esbuild "keepNames") injects a `__name` helper
  * into function bodies, which does not exist inside the page and crashed the verification.
  */

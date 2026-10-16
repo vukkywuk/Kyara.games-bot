@@ -20,16 +20,16 @@ const StoredSessionSchema = z.object({
 });
 export type StoredSession = z.infer<typeof StoredSessionSchema>;
 
-/**
- * Persists the session (bearer token, device id, pack pass) to a private JSON file.
- * The file lives in the git-ignored data dir and is written atomically with 0600 perms.
- * An env-provided token (KYARA_TOKEN) overrides the stored one and is never written.
- */
-/** Short, non-reversible identifier of a secret (lets two parties compare tokens without sending them). */
+/** Short, non-reversible identifier of a secret, so two parties can compare tokens without sending them. */
 export const fingerprint = (secret: string): string => createHash('sha256').update(secret).digest('hex').slice(0, 16);
 
 export type SessionListener = (s: StoredSession) => void;
 
+/**
+ * The session (bearer token, device id, pack pass) in a JSON file in the data dir, written
+ * atomically with mode 0600. A KYARA_TOKEN from the environment overrides the stored token
+ * and is never written.
+ */
 export class SessionStore {
   private cached: StoredSession | null = null;
   private cachedMtimeMs = 0;

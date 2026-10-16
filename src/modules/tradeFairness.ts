@@ -1,9 +1,9 @@
 import type { FairPlay } from '../api/schemas/trades.js';
 
 /*
- * Port of the site's fair-play check (trade dialog, client chunk "CUmMcYkx"). The site shows
- * this verdict before a trade is sent, and refuses to send `over`. The bot is stricter: it only
- * sends trades the site calls `fair`, never a `gift` (a lopsided trade that eats into limits).
+ * Port of the site's fair-play check from its trade dialog. The site shows this verdict
+ * before a trade is sent and refuses to send `over`. The bot is stricter: it only sends
+ * trades the site calls `fair`, never a `gift` (a lopsided trade that eats into limits).
  */
 
 export interface TradeCards {

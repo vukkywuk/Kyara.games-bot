@@ -2,9 +2,9 @@ import type { Me, PackState } from '../api/schemas/account.js';
 import type { Pack } from '../api/schemas/public.js';
 
 /*
- * Port of the site's own pack-cost rules (client chunk "D_eG9lV2"). Keeping the exact
- * rules lets the bot show the real cost before opening, and pass the same `maxChakra`
- * ceiling the site passes, so the server refuses (`cost_changed`) rather than overcharging.
+ * Port of the site's pack-cost rules from its client bundle. Matching them exactly lets the
+ * bot show the real cost before opening and send the same `maxChakra` ceiling as the site,
+ * so the server refuses (`cost_changed`) rather than overcharging.
  */
 
 export type PackAccessKind = 'grant' | 'free' | 'bonus' | 'chakra' | 'limited' | 'locked' | 'used';

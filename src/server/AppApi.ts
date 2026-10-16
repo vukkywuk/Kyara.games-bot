@@ -140,7 +140,7 @@ export class AppApi {
   private register(): void {
     const b = this.bot;
 
-    // ---- system
+    // system
     this.on('GET', '/status', async () => {
       const session = await b.session.status(false);
       const pass = session.passValidForMs;
@@ -185,7 +185,7 @@ export class AppApi {
     this.on('GET', '/events', async (r) => this.hub.recentEvents(int(r.query.get('limit'), 'limit', 1, 300) ?? 100, r.query.get('type') ?? undefined));
     this.on('GET', '/logs', async (r) => this.hub.recentLogs(int(r.query.get('limit'), 'limit', 1, 600) ?? 300));
 
-    // ---- account
+    // account
     this.on('GET', '/me', async () => {
       const me = await b.account.me();
       const wallet = await b.account.wallet(me);
@@ -195,12 +195,12 @@ export class AppApi {
       };
     });
 
-    // ---- catalogue
+    // catalogue
     this.on('GET', '/characters', async () => b.characters.all());
     this.on('GET', '/characters/:id', async (_r, p) => b.characters.detail(int(p.id!, 'id')!));
     this.on('GET', '/series', async () => b.characters.seriesSummary());
 
-    // ---- collection
+    // collection
     this.on('GET', '/collection', async () => {
       const entries = await b.collection.raw();
       const stats = await b.collection.stats(entries);
@@ -208,7 +208,7 @@ export class AppApi {
     });
     this.on('GET', '/wishlist', async () => b.api.account.wishlist());
 
-    // ---- packs
+    // packs
     this.on('GET', '/packs', async () => {
       const loggedIn = b.http.hasToken();
       const [me, state] = loggedIn ? await Promise.all([b.account.me(), b.account.packState()]) : [null, null];
@@ -233,7 +233,7 @@ export class AppApi {
       b.journal.list({ limit: 50 }).filter((a) => a.kind === 'pack.open'),
     );
 
-    // ---- market
+    // market
     this.on('GET', '/market/listings', async (r) => {
       const q = r.query;
       const query = ListingQuerySchema.parse({
@@ -266,7 +266,7 @@ export class AppApi {
       return outcome(out, (res) => ({ chakra: res.user.chakra }));
     });
 
-    // ---- settings (spending limits; .env values stay locked)
+    // settings (spending limits; .env values stay locked)
     this.on('GET', '/settings', async () => b.settings.view());
     this.on('PUT', '/settings', async (r) => {
       const body = z.object({ settings: SettingsSchema, confirm: z.boolean().optional() }).safeParse(r.body);
@@ -280,11 +280,11 @@ export class AppApi {
       return view;
     });
 
-    // ---- trades
+    // trades
     this.on('GET', '/trades', async () => ({ ...(await b.trades.mine()), botTradeIds: this.monitors.botTradeIds() }));
     this.on('POST', '/trades/:id/cancel', async (r, p) => outcome(await b.trades.cancel(p.id!, guardOpts(r.body)), () => ({ cancelled: true })));
 
-    // ---- progress
+    // progress
     this.on('GET', '/progress', async () => b.progress.get());
     this.on('POST', '/progress/claim', async (r) => {
       const body = z.object({ kind: z.enum(CLAIM_KINDS).default('all'), id: z.string().max(120).optional() }).loose().safeParse(r.body);
@@ -293,14 +293,14 @@ export class AppApi {
       return outcome(out, (res) => ({ gained: res.gained, chakra: res.user.chakra, claimable: res.progress.claimable }));
     });
 
-    // ---- community (public)
+    // community (public)
     this.on('GET', '/feed', async () => b.api.catalog.feed());
     this.on('GET', '/leaderboard', async (r) => {
       return b.api.catalog.ladder(z.enum(LADDER_KEYS).parse(r.query.get('by') ?? 'collection'));
     });
     this.on('GET', '/config', async () => b.account.config());
 
-    // ---- action journal
+    // action journal
     this.on('GET', '/actions', async (r) => b.journal.list({ limit: int(r.query.get('limit'), 'limit', 1, 500) ?? 100 }));
     this.on('POST', '/actions/:id/resolve', async (r, p) => {
       const body = z.object({ as: z.enum(['succeeded', 'failed']) }).safeParse(r.body);
@@ -311,7 +311,7 @@ export class AppApi {
       return b.journal.finish(rec.id, body.data.as, { resolvedBy: 'user', error: rec.error ?? undefined });
     });
 
-    // ---- automation
+    // automation
     this.on('GET', '/monitors', async () => ({ pausedAll: this.monitors.isPausedAll, monitors: this.monitors.list() }));
     this.on('POST', '/monitors', async (r) => this.monitors.create(r.body));
     this.on('PUT', '/monitors/:id', async (r, p) => this.monitors.update(p.id!, r.body));

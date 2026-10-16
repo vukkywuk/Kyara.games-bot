@@ -1,12 +1,11 @@
 /**
  * Kyara Bot desktop app (Electron main process).
  *
- * Runs the same local server as `kyara serve` (127.0.0.1 only) and shows its web app in a
- * window, with a tray icon, start with Windows, and native notifications. The built-in
- * "Kyara" window is a normal browser window on kyara.games where you log in yourself; the
- * app only reads the three localStorage values the site maintains (token, device id, pass)
- * and validates them like the browser extension's sync. Nothing here touches Cloudflare:
- * the site renews its pass only while you look at it, exactly as in a normal browser.
+ * Runs the same local server as `kyara serve` (127.0.0.1 only), shows its web app, and adds
+ * a tray icon, start with Windows and native notifications. The "Kyara" window is a normal
+ * browser window on kyara.games where the user logs in; the app only reads the three
+ * localStorage values the site maintains (token, device id, pass) and validates them like an
+ * extension sync. Nothing here interacts with Cloudflare or alters how the page runs.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -90,8 +89,6 @@ async function start(): Promise<void> {
   createTray();
   if (!startHidden) showMain();
 }
-
-// ------------------------------------------------------------------ windows
 
 function icon(name = 'icon.png'): Electron.NativeImage {
   return nativeImage.createFromPath(path.join(ASSETS, name));
@@ -228,8 +225,6 @@ async function syncFromKyara(): Promise<void> {
   }
 }
 
-// ------------------------------------------------------------------ tray, IPC, notifications
-
 function createTray(): void {
   tray = new Tray(icon('tray.png'));
   tray.setToolTip('Kyara Bot');
@@ -305,8 +300,6 @@ function notify(e: HubEvent): void {
   n.on('click', () => showMain('/activity'));
   n.show();
 }
-
-// ------------------------------------------------------------------ helpers
 
 const onceKeys = new Set<string>();
 function once(key: string, fn: () => void): void {

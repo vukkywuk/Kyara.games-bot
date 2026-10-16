@@ -133,6 +133,8 @@ describe.skipIf(!enabled)('web app smoke test (Kyara mocked)', () => {
   it('asks before spending chakra, and cancelling sends nothing', async () => {
     await page.goto(base + '/packs');
     await page.getByRole('button', { name: /Hall of Fame/ }).click();
+    // the panel swaps with an exit animation: clicking earlier can hit the previous pack's button
+    await expect.poll(() => page.getByRole('heading', { level: 2, name: 'Hall of Fame' }).isVisible()).toBe(true);
     const before = t.requests.filter((r) => r.method === 'POST').length;
     await page.getByRole('button', { name: 'Open one' }).click();
     const dialog = page.getByRole('dialog', { name: 'Open this pack?' });

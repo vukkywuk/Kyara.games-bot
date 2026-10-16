@@ -100,7 +100,7 @@ export class KyaraServer {
       });
     });
     server.on('connection', (s) => {
-      // Belt and braces: we listen on 127.0.0.1 only, and also refuse anything non-loopback.
+      // The server listens on 127.0.0.1; non-loopback peers are refused here as well.
       if (!isLoopbackAddress(s.remoteAddress)) {
         s.destroy();
         return;
@@ -133,8 +133,6 @@ export class KyaraServer {
       });
     }
   }
-
-  // ------------------------------------------------------------------ routing
 
   private async route(req: IncomingMessage, res: ServerResponse): Promise<void> {
     if (!isLoopbackAddress(req.socket.remoteAddress)) throw new HttpError(403, 'forbidden', 'Loopback only');

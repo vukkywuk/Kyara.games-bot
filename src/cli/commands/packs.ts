@@ -6,7 +6,7 @@ import { fmtNum, parseIntArg, print, printJson, table } from '../output.js';
 import { MAX_OPEN_COUNT } from '../../modules/PackModule.js';
 import type { PackAccess } from '../../modules/packPricing.js';
 
-/** Openable now? Like the site: allowed by the pack rules AND affordable. */
+/** Openable now, as the site decides it: allowed by the pack rules and affordable. */
 function nowCell(a: PackAccess | null, chakra: number): string {
   if (!a) return '';
   if (!a.openable) return `✗ ${a.reason}`;

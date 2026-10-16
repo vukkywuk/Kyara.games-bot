@@ -1,7 +1,7 @@
 /** Actions offered by the desktop app (desktop/preload.ts); null in a normal browser. */
 export interface KyaraDesktop {
   isDesktop: true;
-  /** Opens the app's own window on kyara.games, where you log in yourself. */
+  /** Opens the app's own window on kyara.games, where the user logs in. */
   openKyara(): Promise<boolean>;
   getAutoStart(): Promise<boolean>;
   setAutoStart(on: boolean): Promise<boolean>;

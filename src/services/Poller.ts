@@ -11,7 +11,6 @@ export interface PollOptions {
   maxTicks?: number;
   signal?: AbortSignal;
   log: Logger;
-  /** Injected in tests. */
   sleepFn?: (ms: number, signal?: AbortSignal) => Promise<void>;
   random?: () => number;
 }
@@ -19,12 +18,12 @@ export interface PollOptions {
 const MAX_BACKOFF_MS = 15 * 60_000;
 
 /**
- * Bounded polling loop: fixed floor on the interval, jitter, exponential backoff on
- * errors, a maximum duration, abort support (Ctrl+C), and an immediate stop on auth errors.
- */
-/**
- * The task may return a delay hint (ms) to wake earlier than the interval, e.g. right when
- * an auction enters its bidding window. Hints are clamped to [minIntervalMs, interval].
+ * Bounded polling loop: a floor on the interval, jitter, exponential backoff on errors, a
+ * maximum duration and abort support. An AuthRequiredError ends the loop by propagating.
+ *
+ * The task may return a delay hint (ms) to wake earlier than the interval, e.g. when an
+ * auction enters its bidding window. Hints are clamped to [minIntervalMs, interval] and
+ * ignored after a failed tick.
  */
 export async function poll(task: (tick: number) => Promise<number | void>, o: PollOptions): Promise<{ ticks: number; reason: string }> {
   const interval = Math.max(o.intervalMs, o.minIntervalMs);

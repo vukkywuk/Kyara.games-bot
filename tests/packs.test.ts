@@ -222,7 +222,7 @@ describe('pack pass policy', () => {
     bot.passes.importPass(JSON.stringify({ pass: 'pass-1234567890', expiresAt: Date.now() + 600_000 }));
     const amb = (await bot.packs.open('all', 1, { assumeYes: true }).catch((e: unknown) => e)) as AmbiguousOutcomeError;
     expect(bot.journal.get(amb.actionId)!.status).toBe('unknown');
-    // the resend is refused (pass_required): that says nothing about the first attempt → still unknown
+    // the resend is refused (pass_required): that says nothing about the first attempt -> still unknown
     t.on('POST /packs/all/open', { status: 403, body: { error: 'pass_required' } });
     await bot.packs.open('all', 1, { assumeYes: true, resumeId: amb.actionId }).catch(() => undefined);
     expect(bot.journal.get(amb.actionId)!.status).toBe('unknown');

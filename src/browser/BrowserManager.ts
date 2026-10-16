@@ -15,9 +15,9 @@ export interface BrowserManagerOptions {
 }
 
 /**
- * Owns one persistent Chromium context (a dedicated profile under the data dir, never
- * your everyday browser profile). Persistence means you log in to Discord once; the
- * profile directory is git-ignored and can be wiped with `kyara session logout --wipe-browser`.
+ * Owns one persistent Chromium context: a dedicated profile under the data dir, never the
+ * user's everyday profile. It keeps the Discord login between runs and can be wiped with
+ * `kyara session logout --wipe-browser`.
  */
 export class BrowserManager {
   private context: BrowserContext | null = null;
@@ -81,8 +81,8 @@ export class BrowserManager {
   }
 
   /**
-   * Like readLocalStorage, but NEVER navigates: returns null while no tab is on the Kyara
-   * origin (e.g. you are on discord.com logging in). Used while a human is acting.
+   * Like readLocalStorage, but never navigates: returns null while no tab is on the Kyara
+   * origin (e.g. during the Discord login). Used while a human is acting.
    */
   async peekLocalStorage(keys: string[]): Promise<Record<string, string | null> | null> {
     if (!this.context) return null;

@@ -104,6 +104,6 @@ export function registerCollection(program: Command): void {
       print(`Since ${d.from}:`);
       print(`  +${d.added.length} new: ${d.added.map((a) => name(a.characterId)).join(', ') || '–'}`);
       print(`  -${d.removed.length} gone: ${d.removed.map((a) => name(a.characterId)).join(', ') || '–'}`);
-      print(`  ${d.changed.length} quantity change(s): ${d.changed.map((c) => `${name(c.characterId)} ${c.before}→${c.after}`).join(', ') || '–'}`);
+      print(`  ${d.changed.length} quantity change(s): ${d.changed.map((c) => `${name(c.characterId)} ${c.before}->${c.after}`).join(', ') || '–'}`);
     });
 }

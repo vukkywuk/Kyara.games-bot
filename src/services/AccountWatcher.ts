@@ -12,7 +12,7 @@ import type { Notifier } from './Notifier.js';
 export interface AccountWatcherOptions {
   /** Claim rewards automatically (spends nothing). Off by default. */
   autoClaim: boolean;
-  /** Open this pack automatically, but ONLY while it costs 0 chakra (free/bonus/grant). */
+  /** Open this pack automatically, only while it costs 0 chakra (free, bonus or granted packs). */
   autoOpenFreePack: string | null;
   /** Checked right before each automatic action: false once the monitor was stopped. */
   isActive?: () => boolean;

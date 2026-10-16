@@ -64,8 +64,6 @@ export const qk = {
 
 const isAuthError = (e: unknown) => e instanceof ApiError && e.code === 'auth_required';
 
-// ------------------------------------------------------------------ reads
-
 export const useStatus = () => useQuery({ queryKey: qk.status, queryFn: ({ signal }) => get<AppStatus>('/status', signal), refetchInterval: 15_000 });
 
 export function useMe(enabled = true) {
@@ -123,8 +121,6 @@ export const useSettings = () => useQuery({ queryKey: qk.settings, queryFn: ({ s
 export const useMonitors = () => useQuery({ queryKey: qk.monitors, queryFn: ({ signal }) => get<{ pausedAll: boolean; monitors: Monitor[] }>('/monitors', signal), refetchInterval: 10_000 });
 export const useFeed = () => useQuery({ queryKey: qk.feed, queryFn: ({ signal }) => get<FeedEntry[]>('/feed', signal), refetchInterval: 60_000 });
 export const useSiteConfig = () => useQuery({ queryKey: qk.config, queryFn: ({ signal }) => get<KyaraSiteConfig>('/config', signal), staleTime: 10 * 60_000 });
-
-// ------------------------------------------------------------------ writes
 
 /** After an action, refresh what it may have changed. */
 function invalidateAccount(qc: QueryClient): void {
@@ -237,8 +233,6 @@ export function useBridgeMutations() {
   };
 }
 
-// ------------------------------------------------------------------ live updates
-
 /** Invalidates exactly what a server event changed. Mounted once by the shell. */
 export function useLiveInvalidation(): void {
   const qc = useQueryClient();
@@ -265,8 +259,6 @@ export function useLiveInvalidation(): void {
     [qc],
   );
 }
-
-// ------------------------------------------------------------------ time
 
 interface Ticker {
   subscribe: (cb: () => void) => () => void;

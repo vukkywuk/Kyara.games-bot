@@ -5,44 +5,47 @@
 - Only features available to **your own account** through the site's normal flows.
 - **No bypassing** of Cloudflare Turnstile, CAPTCHAs, logins or limits. When the site wants a human, a visible browser window opens and the bot waits for you.
 - Conservative request rates: serialised requests, ≥ 250 ms apart by default, honouring the server's `x-ratelimit-*` and `retry-after` headers.
-- Notifications by default. Anything that spends automatically (chakra or cards) must be explicitly enabled in **two** places (Settings, or `.env`, and the monitor itself) and is capped.
+- Notifications by default. Anything that spends automatically (chakra or cards) must be enabled in **two** places, the global setting (Settings, or `.env`) and the monitor itself, and is capped.
 
 ## Supported workflows
 
-| Workflow | Command | Spends? | Confirmation | Status |
+| Workflow | Command | Spends? | Confirmation | Verified live |
 |---|---|---|---|---|
-| Log in (Discord, in a visible browser) | `session login` | – | you log in yourself | Implemented; needs your first run to confirm end to end |
-| Import a token you copied | `session import` (stdin) | – | – | Implemented, tested with mocks |
-| Open packs | `packs open <id> [-c N]` | chakra if no free/bonus/grant left | **yes** when chakra is spent | Implemented, tested with mocks; the live flow is INFERRED |
-| Bid on an auction | `market bid <listing> <max>` | reserves `max` | **always** | Implemented, tested with mocks; INFERRED |
-| Buy a listing | `market buy <listing> [--max-price]` | yes | **always** | Implemented, tested with mocks; INFERRED |
-| Claim rewards | `progress claim [kind] [id]` | no | no | Implemented, tested with mocks; INFERRED |
-| Watch auctions | `monitor auctions …` | no (unless `--auto-bid`) | – | Implemented |
-| Watch the account | `monitor account …` | no | – | Implemented |
-| Watch the collection | `monitor collection` | no | – | Implemented |
-| Answer chat trade requests | app → Monitors → *Chat trades* | spare cards, chakra if allowed | preview first; sending needs Settings | Implemented, tested with mocks; reads CONFIRMED, proposal INFERRED |
+| Log in (Discord, in a visible browser) | `session login` | – | you log in yourself | not end to end (sessions so far came from import and sync) |
+| Import a token you copied | `session import` (stdin) | – | – | yes |
+| Open packs | `packs open <id> [-c N]` | chakra if no free/bonus/grant left | **yes** when chakra is spent | yes |
+| Bid on an auction | `market bid <listing> <max>` | reserves `max` | **always** | yes |
+| Buy a listing | `market buy <listing> [--max-price]` | yes | **always** | no (mocks only) |
+| Claim rewards | `progress claim [kind] [id]` | no | no | yes |
+| Watch auctions | `monitor auctions …` | no (unless `--auto-bid`) | – | yes |
+| Watch the account | `monitor account …` | no | – | yes |
+| Watch the collection | `monitor collection` | no | – | read-only; not separately checked |
+| Answer chat trade requests | app -> Monitors -> *Chat trades* | spare cards, chakra if allowed | preview first; sending needs Settings | reads yes; proposals not sent yet |
 
-"INFERRED" means the request format comes from the site's own code, but it has not
-been sent live yet (no session was available while building, and no costly action was
-sent on purpose). See "First live run" below.
+Endpoint-level status is in [api-reference.md](api-reference.md).
 
 ## Pack pass (Cloudflare Turnstile)
 
-Opening packs needs a pass (about 30 min) that the server only issues after a Turnstile check. Observed on 2026-10-10: Cloudflare **refuses the bot's Playwright browser** (error 600010) even before any click, because it is visibly automated. The bot does not try to hide that. Instead:
+Kyara can require a short-lived pass (about 30 min) on pack openings, obtained through a
+Turnstile check. Whether it does is published by `GET /api/auth/providers`:
 
-1. Keep https://kyara.games open, logged in, in your normal browser. While the tab is visible, the site renews its own pass every minute, and Cloudflare passes a normal browser silently.
-2. Copy `kyara_pass` from DevTools → Application → Local Storage, and run `session import-pass` (add `--device-id <kyara_device>` the first time).
-3. Open packs with the bot until the pass expires (`session status` shows the time left).
+- **`turnstile: null`** (the state since October 2026): the site requests no pass and opens
+  packs without an `x-pass` header. The bot checks the same endpoint (cached for 5 minutes)
+  and opens packs in the background like any other request.
+- **A site key**: openings need a valid pass. Cloudflare refuses the bot's Playwright browser
+  (error 600010, observed 2026-10-10) and the bot does not try to hide its automation, so the
+  pass has to come from a browser you use:
+  - the desktop app's Kyara window or the extension syncs it while kyara.games is open and
+    visible (the site renews its pass every minute only while visible);
+  - or copy `kyara_pass` from DevTools -> Application -> Local Storage and run
+    `session import-pass` (add `--device-id <kyara_device>` the first time).
 
-If the server rejects an imported pass (`pass_required`), nothing is opened and the bot asks for a fresh one. Unattended free-pack opening (`monitor account --auto-open-free`) therefore only works while an imported pass is valid.
-
-In the desktop app, the built-in Kyara window does the same automatically: while it is open
-and visible, the site renews its pass and the app syncs it, so free packs are opened.
+  Without a valid pass, openings are refused before anything is sent. If the server rejects
+  a stored pass (`pass_required`), nothing is opened and the pass is dropped.
 
 **Bids, buys and trade proposals** are sent the way the site sends them: with the stored pass
-attached when one is valid. Kyara does not always require it. If it answers `pass_required`,
-nothing was applied: the action is reported as "Kyara wants its anti-bot pass" and the
-monitor tries again on its next check, once a pass is synced.
+attached when one is valid. If Kyara answers `pass_required`, nothing was applied; the action
+is reported as "Kyara wants its anti-bot pass" and a monitor tries again on its next check.
 
 ## Safeguards on every state-changing action
 
@@ -50,7 +53,7 @@ monitor tries again on its next check, once a pass is synced.
 2. **Fresh preflight**: before sending, the bot re-reads the server state. It checks the balance (`insufficient_funds`), pack availability, schedule, daily limit and grant-only status; and for listings: active, not yours, an auction for bids, above `minNextBid`, below the buyout.
 3. **Cost shown first**, e.g. `Open 2× "Hall of Fame" (2 paid) — cost 1500 chakra (balance 3200)`.
 4. **Explicit confirmation** for anything that spends (type `yes`). In a non-interactive shell, it refuses unless `--yes` is passed.
-5. **Per-action spending cap**: Settings → *Most chakra one action may spend* (or `KYARA_MAX_SPEND_PER_ACTION`, default 500); `--force-budget` overrides it once.
+5. **Per-action spending cap**: Settings -> *Most chakra one action may spend* (or `KYARA_MAX_SPEND_PER_ACTION`, default 500); `--force-budget` overrides it once.
 6. **Server-side ceiling**: pack openings send `maxChakra` = the quoted cost, so the server refuses (`cost_changed`) instead of charging more.
 7. **Duplicate protection**: an in-process "already running" check, a cross-process lock file, and a per-action cooldown (bids: same listing + amount within 60 s; buys: same listing within 24 h; openings: 2 s).
 8. **Uncertain outcomes are never retried.** A timeout or 5xx on a write is recorded as `unknown` and blocks identical actions until resolved:
@@ -60,7 +63,7 @@ monitor tries again on its next check, once a pass is synced.
    kyara actions resolve <id> --as succeeded   # or failed
    kyara packs open all --resume <id>          # openings only: re-sends the same idempotency key
    ```
-9. **Journal**: every action is appended to `.kyara/actions.jsonl` (secrets redacted).
+9. **Journal**: every action is appended to `actions.jsonl` in the data directory (secrets redacted).
 10. **`--dry-run`** runs all checks and shows the summary without sending anything.
 
 ## Auto-bidding (off by default)
@@ -78,9 +81,8 @@ KYARA_AUTO_BID_MAX=400       # ceiling per copy
 kyara monitor auctions --character 127691 --max-price 300 --auto-bid --copies 2 --within 2m
 ```
 
-In the web app, the same settings are under Monitors, then a market monitor, then
-Automatic bidding: copies to get, total budget (empty = copies × maximum price) and the
-bidding window.
+In the app, the same options are on a market monitor under *Automatic bidding*: copies to
+get, total budget (empty = copies × maximum price) and the bidding window.
 
 Kyara bids are proxy bids: you set a maximum, and the server raises your bid only as far
 as someone else pushes it. So the monitor:
@@ -91,10 +93,10 @@ as someone else pushes it. So the monitor:
   when it is outbid or loses;
 - never commits more than the budget, counting bids still leading at their maximum and
   copies won at their final price (outbid bids are refunded, so they stop counting);
-- wakes up right when the next auction enters the window, and right after a leading
-  auction ends to record a win or a loss;
-- in the server, keeps copies won and bids in flight in `.kyara/monitors.json`, so a
-  restart does not start over. Editing what the monitor watches resets the count.
+- wakes up when the next auction enters the window, and right after a leading auction ends
+  to record a win or a loss;
+- in the server, keeps copies won and bids in flight in `monitors.json`, so a restart does
+  not start over. Changing what the monitor watches resets the count.
 
 Each bid goes through the same guarded path as a manual bid (fresh preflight, journal,
 per-action cap). An unknown outcome stops auto-bidding until the monitor is saved again.
@@ -108,11 +110,9 @@ kyara monitor account --auto-open-free all         # opens "all" only while it c
 
 `--auto-open-free` opens every free pack available in one request (up to 10), re-quotes
 before each opening and refuses if the cost is not 0 (`requireFree`). It checks again a few
-seconds after the next free pack regenerates, rather than waiting a full interval.
-
-It needs a valid pack pass, which the site renews only while a kyara.games tab is visible.
-When the pass is missing or rejected, the monitor skips the opening and posts one
-"Free packs not opened" event with the reason, instead of failing silently.
+seconds after the next free pack regenerates, rather than waiting a full interval. When an
+opening is refused (for example no valid pass while Turnstile is on), the monitor posts one
+"Free packs not opened" event with the reason.
 
 ## Chat trades (preview by default)
 
@@ -121,10 +121,10 @@ Players post structured requests in the market chat: a card tagged **“Anyone h
 monitor reads every chat room (read only, it never posts) and answers new requests, at most a
 few minutes old, with a trade proposal:
 
-- **They look for a card I have spare** → give one spare copy, and ask for the most valuable
+- **They look for a card I have spare** -> give one spare copy, and ask for the most valuable
   card **on my wishlist** that they can trade, worth 80–130 % of mine (configurable). If none
   fits, ask for chakra at 110 % of its value (configurable, or off).
-- **They offer a card on my wishlist** → pay with my spare copies (cards they do not own
+- **They offer a card on my wishlist** -> pay with my spare copies (cards they do not own
   first, up to 3 cards worth 80–110 % of it), else with chakra up to a cap.
 
 Values are Kyara's own fair-play reference prices (`/fair-play/prices`), and every proposal
@@ -148,23 +148,13 @@ trades are answered on kyara.games. An unclear outcome stops the monitor until y
 
 ## Limits and caveats
 
-- Session **read** endpoints are confirmed against a real account (trades, chat and fair-play included). The **write** responses (open, claim, bid, buy, trade proposal, cancel) are still inferred; if one differs, you get a `SchemaMismatchError` and the action is recorded as `unknown` (the server may have applied it). Check the account before retrying.
+- Buying, pass creation, trade proposals and trade cancellation have not been sent live yet;
+  their response shapes come from the site's client. If one differs, the bot raises
+  `SchemaMismatchError` and records the action as `unknown` (the server may have applied it).
+  Check the account before retrying. Start chat trades in preview, then send with a pending
+  limit of 1.
 - Bids and purchases also check `/me/market/access` first and refuse with the server's reasons while the market is locked for the account.
 - An ambiguous error on a bid or a purchase cannot be resumed automatically (these endpoints have no idempotency key). Check the account by hand.
 - The market has no server-side price filter; `--max-price` filters the fetched pages locally.
 - Real-time events (`/api/me/events`, SSE) are not used; monitors poll at conservative intervals instead.
-- Selling, cancelling listings, buy orders, accepting/declining trades, recycling, friends/DMs and posting in the chat are discovered but **not automated** (destructive or social actions). See `docs/api-reference.md`.
-
-## First live run (recommended)
-
-```
-npm run browser:install
-npm run dev -- session login        # log in with Discord in the window
-npm run dev -- api verify --shapes  # confirms the inferred read schemas (GET only)
-npm run dev -- progress claim --dry-run
-npm run dev -- packs quote all
-npm run dev -- packs open daily --dry-run
-```
-
-Then try one free opening (`packs open all` while you have free packs). It costs
-nothing and confirms the pass + opening flow end to end.
+- Selling, cancelling listings, buy orders, accepting/declining trades, recycling, friends/DMs and posting in the chat are discovered but **not automated** (destructive or social actions). See [api-reference.md](api-reference.md).

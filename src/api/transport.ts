@@ -1,7 +1,6 @@
 /**
- * The transport is the only part of the HTTP stack that differs between running the
- * bot as a plain Node process and running requests inside the authenticated browser
- * page. Business logic only ever sees KyaraHttpClient, so either can be plugged in.
+ * The only layer that differs between direct HTTP (Node fetch) and requests run inside the
+ * Kyara page. Everything above it goes through KyaraHttpClient.
  */
 
 export interface TransportRequest {

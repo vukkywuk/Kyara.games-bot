@@ -39,8 +39,8 @@ export class SessionManager {
   /** Fingerprints of tokens Kyara refused: never asked for again (prevents a resend loop). Bounded. */
   private readonly rejectedTokenFps = new Set<string>();
   /**
-   * Fingerprints of valid tokens for ANOTHER account than the bot's. Never applied silently:
-   * the bot keeps acting on the account it has until you forget that session yourself.
+   * Fingerprints of valid tokens for a different account than the bot's. They are never
+   * adopted silently: the bot keeps its account until the user forgets the session.
    */
   private readonly otherAccountFps = new Set<string>();
 
@@ -72,9 +72,9 @@ export class SessionManager {
   }
 
   /**
-   * Applies session material pushed by the paired browser extension. One entry point,
-   * serialised by the mutex. The token is only accepted after the server confirms it
-   * via /api/me; nothing is reported as accepted unless it was validated and stored.
+   * Applies session material from the browser extension or the app's Kyara window. A token
+   * is stored only after `/api/me` accepts it, and `accepted` reports only what was
+   * validated and stored.
    */
   applyBridgeSync(req: SyncRequest, source: 'bridge' | 'app' = 'bridge'): Promise<SyncResponse> {
     return this.lock.run(async () => {
@@ -85,8 +85,8 @@ export class SessionManager {
       if (!this.store.token()) this.otherAccountFps.clear();
 
       if (req.loggedOut) {
-        // The browser no longer has a session: drop the pass. A bridge-provided token is
-        // also dropped; a token you imported yourself is left alone (it may be another session).
+        // The site has no session any more: drop the pass, and the token if it came from a
+        // sync. An imported token may be a different session and is kept.
         const patch: Partial<StoredSession> = { pass: null };
         if (before.source === 'bridge' || before.source === 'app') Object.assign(patch, { token: null, user: null, source: 'none', invalidatedAt: null });
         this.store.update(patch);
@@ -170,10 +170,7 @@ export class SessionManager {
     });
   }
 
-  /**
-   * Same validation path for the desktop app's built-in Kyara window: it reads the three
-   * localStorage values the site maintains (token, device id, pass) and nothing else.
-   */
+  /** The desktop app's Kyara window: the site's three localStorage values, validated like an extension sync. */
   applySiteSnapshot(snap: { token: string | null; deviceId: string | null; pass: { pass: string; expiresAt: number } | null }): Promise<SyncResponse> {
     // logged out in the app window: only a session that came from that window is dropped
     if (!snap.token) {
@@ -184,8 +181,8 @@ export class SessionManager {
   }
 
   /**
-   * Forgets the bot's session locally WITHOUT revoking it on Kyara (it may be the same
-   * session your browser uses). Lets the extension provide a session for another account.
+   * Forgets the session locally without revoking it on Kyara, since a browser may share it.
+   * A later sync may then provide a session for another account.
    */
   forget(): Promise<void> {
     return this.lock.run(async () => {
@@ -224,9 +221,8 @@ export class SessionManager {
   }
 
   /**
-   * Interactive login: opens a visible browser on kyara.games and waits until the site
-   * stores a token for a Discord-linked account. You log in yourself; the bot only reads
-   * the resulting token from the page's localStorage and checks it against /api/me.
+   * Opens a visible browser on kyara.games and waits for the user to log in. The token is
+   * taken from the page's localStorage once it belongs to a Discord-linked account.
    */
   async loginWithBrowser(opts: LoginOptions = {}): Promise<Me> {
     const browser = this.browserFactory();
@@ -246,7 +242,7 @@ export class SessionManager {
       const result = await browser.waitForHuman(
         'log in with Discord on kyara.games',
         async () => {
-          // Never navigate here: you may be on discord.com in the middle of logging in.
+          // Never navigate here: the user may be on discord.com mid-login.
           const ls = await browser.peekLocalStorage([SITE_STORAGE.token, SITE_STORAGE.device]);
           const token = ls?.[SITE_STORAGE.token];
           if (!ls || !token) return null;
@@ -283,7 +279,7 @@ export class SessionManager {
     }
   }
 
-  /** Stores a token you copied yourself (DevTools → Application → Local Storage → kyara_token). */
+  /** Stores a token copied by hand (DevTools -> Application -> Local Storage -> kyara_token). */
   importToken(token: string, deviceId?: string): Promise<Me> {
     return this.lock.run(() => this.importTokenUnlocked(token, deviceId));
   }
@@ -333,7 +329,7 @@ export class SessionManager {
     return { revoked };
   }
 
-  /** Returns /me for a candidate token, or null if the server rejects it. */
+  /** Null when Kyara rejects the token; any other failure throws. */
   async validateToken(token: string, deviceId?: string): Promise<Me | null> {
     const client = new KyaraHttpClient({
       ...this.httpOptions,

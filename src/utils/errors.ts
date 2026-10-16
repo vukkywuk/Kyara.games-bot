@@ -44,7 +44,7 @@ export class AuthRequiredError extends KyaraError {
   }
 }
 
-/** The server asked us to slow down and we exhausted our patience. */
+/** The server asked the bot to slow down and the retries ran out. */
 export class RateLimitedError extends KyaraError {
   constructor(
     message: string,
@@ -61,7 +61,7 @@ export class NetworkError extends KyaraError {
   }
 }
 
-/** The response did not match the schema we expect. The site probably changed. */
+/** The response did not match its schema; the site probably changed. */
 export class SchemaMismatchError extends KyaraError {
   constructor(
     readonly path: string,

@@ -65,8 +65,8 @@ imports and logout go through the same mutex, so concurrent updates cannot inter
   fingerprint) and has more than a minute left.
 - Logging out in the browser clears the pass, and a bridge-provided token. A token you
   imported by hand is left alone (it may be a different session).
-- Everything is persisted in `.kyara/session.json` (mode 0600, git-ignored) and every
-  secret is registered with the log redactor.
+- Everything is persisted in `session.json` in the data directory (mode 0600; `.kyara/` by
+  default, git-ignored) and every secret is registered with the log redactor.
 
 ## The local server
 
@@ -94,13 +94,13 @@ in there yourself.
   `executeJavaScriptInIsolatedWorld`, so the page's own scripts cannot tamper with the reader.
   Only when the window's origin is exactly `https://kyara.games`.
 - The values go through the same entry point as the extension
-  (`SessionManager.applySiteSnapshot` → `applyBridgeSync`): `/api/me` validation, refusal to
+  (`SessionManager.applySiteSnapshot` -> `applyBridgeSync`): `/api/me` validation, refusal to
   switch accounts silently, rejected-token memory. The session source is `app`.
 - A logged-out Kyara window only clears a session that came from that window, never one from
   the extension or an import.
 - No visibility override, no throttling tricks, no user-agent change, nothing injected into
-  the page's world. The site renews its pass only while you look at the window, as in any
-  browser.
+  the page's world. While Turnstile is enabled, the site renews its pass only while the window
+  is visible, as in any browser.
 - The app window shows only the local app (`http://127.0.0.1:<port>`): navigation elsewhere
   is blocked and external links open in your default browser. Its preload exposes four calls
   (open the Kyara window, read or set start with Windows, open the data folder), each checked
@@ -120,8 +120,8 @@ be changed from the app.
 The bridge protects your session from **web pages and other machines**. It does not, and
 cannot, protect against software that already runs under your operating-system account:
 
-- such software can read `.kyara/session.json`, the extension's storage, or your
-  browser's own profile, and it can inspect process memory;
+- such software can read the data directory's `session.json`, the extension's storage, or
+  your browser's own profile, and it can inspect process memory;
 - a malicious browser extension with access to kyara.games could read the same
   localStorage keys the site itself keeps there.
 
@@ -139,5 +139,6 @@ Kyara's side.
 - End to end in Chromium (`tests/extension.e2e.test.ts`): the built extension pairs from
   its popup, syncs a stubbed kyara.games tab's session to a real bridge server, never
   shows or stores the token or pass, and unpairs.
-- Not automated: a sync from the real kyara.games site, which needs your logged-in
-  browser. See the README for the first manual run.
+- Not automated: a sync from the real kyara.games site, which needs a logged-in browser.
+  It has been checked by hand, through the extension (Brave) and through the desktop app's
+  Kyara window.

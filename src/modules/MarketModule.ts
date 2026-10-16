@@ -12,7 +12,6 @@ export interface ListingFilter {
   minPrice?: number;
   endingWithinMs?: number;
   excludeMine?: boolean;
-  /** Only auctions without a buyout, etc. */
   auctionsOnly?: boolean;
 }
 
@@ -72,8 +71,8 @@ export class MarketModule {
   }
 
   /**
-   * Places a proxy bid. `maxAmount` is reserved from your chakra (refunded if outbid,
-   * partially refunded if you win below it), so the balance check uses the full amount.
+   * Places a proxy bid. `maxAmount` is held from the balance (refunded if outbid, partly
+   * refunded when the auction is won below it), so the balance check uses the full amount.
    */
   async bid(listingId: string, maxAmount: number, opts: GuardOptions = {}): Promise<GuardOutcome<BidResult>> {
     let summary = `Bid up to ${maxAmount} chakra on listing ${listingId.slice(0, 8)}`;

@@ -27,7 +27,7 @@ export function assertListingId(id: string): string {
 export class MarketEndpoints {
   constructor(private readonly http: KyaraHttpClient) {}
 
-  // ---- reads (public; a session only adds isMine / myMaxBid / leading) ----
+  // Public; with a session, listings also carry isMine / myMaxBid / leading.
   listings = (query: ListingQuery = {}) => {
     const parsed = ListingQuerySchema.safeParse(query);
     if (!parsed.success) throw new UsageError(`Invalid listing query: ${parsed.error.issues.map((i) => i.message).join('; ')}`);
@@ -39,12 +39,11 @@ export class MarketEndpoints {
     this.http.get('/market/buy-orders', OrderBookSchema, { query: { characterId: positiveInt(characterId) } });
   tradeOffers = () => this.http.get('/trades/offers', TradeOfferListSchema);
 
-  // ---- reads (session) ----
   mine = () => this.http.get('/me/market', MyMarketSchema, { auth: 'required' });
   access = () => this.http.get('/me/market/access', MarketAccessSchema, { auth: 'required' });
   myTrades = () => this.http.get('/me/trades', z.unknown(), { auth: 'required' });
 
-  // ---- state-changing (through ActionGuard only) ----
+  // Writes: call through ActionGuard only.
   /** Proxy bid: `maxAmount` is a ceiling held aside, not necessarily spent. */
   bid = (listingId: string, maxAmount: number, pass: string | null = null) =>
     this.http.mutate('POST', `/market/listings/${assertListingId(listingId)}/bid`, BidResultSchema, { body: { maxAmount }, headers: passHeader(pass) });

@@ -128,7 +128,7 @@ function SettingsForm({ view }: { view: SettingsView }) {
             <li key={f} className="num flex justify-between gap-4">
               <span className="text-muted">{LABEL[f]}</span>
               <span>
-                {show(get(view.values, f))} → <span className="text-warn">{show(get(s, f))}</span>
+                {show(get(view.values, f))} {'->'} <span className="text-warn">{show(get(s, f))}</span>
               </span>
             </li>
           ))}

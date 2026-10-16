@@ -91,8 +91,6 @@ async function call<T>(p: Pairing | { port: number }, method: string, path: stri
   return data;
 }
 
-// ------------------------------------------------------------------ sync
-
 let latest: { snapshot: SiteSnapshot; visible: boolean } | null = null;
 let syncing: Promise<void> = Promise.resolve();
 

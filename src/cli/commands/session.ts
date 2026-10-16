@@ -21,7 +21,7 @@ export function registerSession(program: Command): void {
 
   session
     .command('import')
-    .description('save a token you copied yourself (DevTools → Local Storage → kyara_token), read from stdin')
+    .description('save a token you copied yourself (DevTools -> Local Storage -> kyara_token), read from stdin')
     .option('--device-id <id>', 'the kyara_device value from the same browser (optional)')
     .action(async (o: { deviceId?: string }, cmd: Command) => {
       const token = await readSecret('Paste the token (input is hidden) and press Enter: ');

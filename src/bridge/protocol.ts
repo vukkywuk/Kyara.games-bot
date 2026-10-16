@@ -131,7 +131,7 @@ export async function signRequest(
   return { [HEADERS.client]: clientId, [HEADERS.ts]: ts, [HEADERS.nonce]: nonce, [HEADERS.sig]: sig };
 }
 
-/** Normalises a pairing code the user typed: "abcd efgh" → "ABCD-EFGH". */
+/** Normalises a pairing code the user typed: "abcd efgh" -> "ABCD-EFGH". */
 export function normalizePairingCode(input: string): string {
   const raw = input.toUpperCase().replace(/[^A-Z0-9]/g, '');
   return raw.length === 8 ? `${raw.slice(0, 4)}-${raw.slice(4)}` : raw;

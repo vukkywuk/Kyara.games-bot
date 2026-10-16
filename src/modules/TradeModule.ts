@@ -15,7 +15,7 @@ export interface ProposeOptions extends GuardOptions {
   summary?: string;
 }
 
-/** Trades: proposing and cancelling, always through the ActionGuard. Never accepts or declines for you. */
+/** Proposing and cancelling trades, always through the ActionGuard. It never accepts or declines trades. */
 export class TradeModule {
   constructor(
     private readonly api: KyaraApi,

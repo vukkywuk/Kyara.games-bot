@@ -84,8 +84,6 @@ export class BridgeService {
     private readonly now: () => number = Date.now,
   ) {}
 
-  // ---------------------------------------------------------------- pairing
-
   /** New one-time code (replaces any previous one). Shown in the app / terminal only. */
   createPairingCode(): { code: string; expiresAt: number } {
     let raw = '';
@@ -140,8 +138,6 @@ export class BridgeService {
     this.events.onEvent?.('bridge.paired', { clientId: client.id, label: client.label });
     return { clientId: client.id, secret: client.secret, protocol: BRIDGE_PROTOCOL_VERSION };
   }
-
-  // ---------------------------------------------------------------- authenticated operations
 
   /** Verifies the HMAC signature, timestamp and nonce. Returns the client. */
   async authenticate(
@@ -222,8 +218,6 @@ export class BridgeService {
   clients(): PublicClient[] {
     return this.load().clients.map(({ id, label, pairedAt, lastSeenAt, lastSyncAt }) => ({ id, label, pairedAt, lastSeenAt, lastSyncAt }));
   }
-
-  // ---------------------------------------------------------------- persistence
 
   private touch(clientId: string, synced: boolean): void {
     const state = this.load();

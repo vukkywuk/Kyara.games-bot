@@ -137,7 +137,7 @@ function Detail({ id, owned, fallback, onClose }: { id: number; owned?: number; 
   );
 }
 
-/** "#0001/6736" → "No. 1 of 6,736 by popularity". */
+/** "#0001/6736" -> "No. 1 of 6,736 by popularity". */
 function catalogueLine(numStr: string): string {
   const m = /#?0*(\d+)\/(\d+)/.exec(numStr);
   return m ? `No. ${Number(m[1]).toLocaleString('en-US')} of ${Number(m[2]).toLocaleString('en-US')} by popularity` : numStr;

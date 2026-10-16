@@ -17,14 +17,14 @@ schemas against the live site (it only sends GET requests).
 |---|---|
 | **CONFIRMED** | Called live; the response was validated by the bot's Zod schema (`kyara api verify`). |
 | **CONFIRMED (errors)** | Error behaviour observed live (status code + `error` code). |
-| **CONFIRMED (session)** | Called live with a real logged-in account on 2026-10-10 (`kyara api verify --shapes`); the response validated against the schema. |
-| **INFERRED** | Method, path and body come from the site's own client code; the response shape comes from the fields its UI reads. Not sent live yet. This now applies only to the **write** endpoints (open, claim, bid, buy, pass), which were not sent on purpose. |
+| **CONFIRMED (session)** | Called live with a logged-in account, and the response validated against the schema. Reads were checked with `kyara api verify --shapes` on 2026-10-10; pack openings, claims and bids were confirmed by real use. |
+| **INFERRED** | Method, path and body come from the site's own client code; the response shape comes from the fields its UI reads. Not sent live yet: buying, pass creation, trade proposals and cancellation, wishlist writes. |
 | **DISCOVERED** | Present in the client code but not implemented by the bot. |
 
 ## Conventions (CONFIRMED)
 
 - Base: `https://kyara.games/api`. The page is served by SvelteKit. Responses come from several API nodes (`x-kyara-node: api-1…api-8`).
-- **No Cloudflare challenge on plain HTTP requests** to the API (observed). Cloudflare **Turnstile** is used only for specific actions (guest creation, pack "pass").
+- **No Cloudflare challenge on plain HTTP requests** to the API (observed). Cloudflare **Turnstile** is used only for specific actions (guest creation, pack pass), and only while `/auth/providers` returns a site key. In October 2026 it returned `null`.
 - **Errors** are JSON `{ "error": "<code>", "message": "<text, usually French>" }` with a matching HTTP status. Examples observed: `401 unauthorized`, `400 bad_request` (validation message), `404 not_found`.
 - **Rate limiting**: every response carries `x-ratelimit-limit: 2000`, `x-ratelimit-remaining` and `x-ratelimit-reset` (seconds to window reset; the window looked like 60 s). The bot honours these and `retry-after`. It also keeps requests serialised and spaced (`KYARA_MIN_INTERVAL_MS`, default 250 ms).
 - **`date` header**: the site uses it to correct clock skew. The bot does the same (`ServerClock`).
@@ -37,7 +37,7 @@ schemas against the live site (it only sends GET requests).
 - **Guest accounts**: on first use, the frontend calls `POST /api/auth/guest` with a Turnstile token and stores the returned `{ token }`. Guests are limited (`403 guest_limit`; `config.guestBoosterLimit`).
 - **Discord login**: the browser navigates to `/api/auth/discord?token=<current guest token>[&ref=<code>]`. After OAuth, the callback page reads `#token=…` from the URL fragment and stores it in `localStorage.kyara_token`.
 - **Logout**: `POST /api/auth/logout` with the bearer token, then the frontend deletes the token.
-- **Pack pass ("laissez-passer")**: opening packs requires an `x-pass` header. It is obtained with `POST /api/auth/pass {"turnstile": "<token>"}` → `{ pass, expiresAt }` (≈30 min; the frontend renews it when < 5 min remain). If the server answers `pass_required`, the frontend renews the pass and re-sends the **same** request.
+- **Pack pass ("laissez-passer")**: while Turnstile is enabled, opening packs requires an `x-pass` header. It is obtained with `POST /api/auth/pass {"turnstile": "<token>"}` -> `{ pass, expiresAt }` (≈30 min; the frontend renews it when < 5 min remain, and every minute while the tab is visible). If the server answers `pass_required`, the frontend renews the pass and re-sends the **same** request. When `/auth/providers` has no Turnstile key, the frontend requests no pass and sends no `x-pass` header; the bot does the same.
 
 ## Endpoint inventory
 
@@ -50,7 +50,7 @@ Legend: **R** = read-only, **W** = changes server state. "Auth": none / optional
 | `GET /health` | Liveness + catalogue state `{ ok, catalog: { ready, size, target, ranked, featured, fetching, lastError } }` | – | none | R | CONFIRMED |
 | `GET /edge` | `{ nodes }`. Used by the frontend to tell "maintenance" from "busy" | – | none | R | CONFIRMED (not used by the bot) |
 | `GET /config` | Game rules: `catalogSize`, `freePacks { max, regenHours, boosts[] }`, `recycle` (chakra per rarity), `dropWeights`, `pity`, `golden`, `godPackChance`, `guestBoosterLimit`, `resets`, `referral` | – | none | R | CONFIRMED |
-| `GET /auth/providers` | `{ discord: bool, turnstile: "<site key>" }` | – | none | R | CONFIRMED |
+| `GET /auth/providers` | `{ discord: bool, turnstile: "<site key>" \| null }` (`null` while Turnstile is off) | – | none | R | CONFIRMED |
 | `GET /notice` | `{ text: string \| null }` site banner | – | none | R | CONFIRMED |
 | `GET /characters` | Full catalogue, about 6,736 items (about 1.7 MB): `{ id, name, native, image, favourites, num, pow, rank, rarity, series, aura }` | – | none | R | CONFIRMED |
 | `GET /characters/:id` | Character + `dropChance` (per pack id, %) + `prices` (market stats) | `id` int | none | R | CONFIRMED |
@@ -71,11 +71,11 @@ Legend: **R** = read-only, **W** = changes server state. "Auth": none / optional
 | `GET /packs/:id/characters` | Ids of all characters that can drop from a pack | `id` pack id | none | R | CONFIRMED (`404 not_found "Booster inconnu"` for unknown ids) |
 | `GET /rates` | Rarity rates `[{ rarity, label, pct, boosterPct, expectedPerBooster, perCardBoosterPct }]` | `?pack=<id>` optional | none | R | CONFIRMED (404 for unknown pack) |
 | `GET /me/packs` | Per-pack daily limits `{ limits: { <packId>: { left } }, day, featuredPity: { <packId>: … } }`. May include packs absent from `GET /packs` (e.g. hidden event packs) | – | required | R | CONFIRMED (session) |
-| `POST /packs/:id/open` | Open one pack | headers `x-request-id` (idempotency key, 32 hex), `x-pass`; body `{ maxChakra? }` | required | **W** | INFERRED |
-| `POST /packs/:id/open-many` | Open N packs | same headers; body `{ count, maxChakra? }` | required | **W** | INFERRED |
+| `POST /packs/:id/open` | Open one pack | headers `x-request-id` (idempotency key, 32 hex), `x-pass` while Turnstile is on; body `{ maxChakra? }` | required | **W** | CONFIRMED (session) |
+| `POST /packs/:id/open-many` | Open N packs | same headers; body `{ count, maxChakra? }` | required | **W** | CONFIRMED (session) |
 | `GET /packs/pulls/:shareId` | Public view of a shared pull | – | none | R | DISCOVERED |
 
-Open result (INFERRED): `{ user: <Me>, cards: [<Character> & { isNew?, wished?, featured? }], godPack?, golden? }`.
+Open result (CONFIRMED (session)): `{ user: <Me>, cards: [<Character> & { isNew?, wished?, featured? }], godPack?, golden? }`.
 Open-many: `{ results: [<open result>], stopped?: { code, message } }`. `stopped` means a partial run, for example `guest_limit`.
 
 **Cost rules** (ported verbatim into `src/modules/packPricing.ts`): grants first, then free packs, then bonus packs (only for packs with `usesFreePacks`), then `chakraPrice` (fallback `price || 150`). Packs with `grantOnly` need a grant. Packs with a `schedule` can only be opened inside the window. Packs with a `limit` respect `GET /me/packs`.
@@ -97,7 +97,7 @@ Known pack errors: `chakra` / 402 (insufficient), `daily_limit`, `pack_unavailab
 | `POST /me/collection/:id/recycle` | Destroy copies for chakra `{ qty }` | | required | W | DISCOVERED (not implemented: destructive) |
 | `POST /me/collection/recycle-all` | Recycle all duplicates `{ rarities: [] }` | | required | W | DISCOVERED (not implemented: destructive) |
 | `GET /me/progress` | Missions: `claimable, resets{nextDaily,nextWeekly}, daily{missions[],bonusClaimed}, weekly{…}, streak{day,claimedToday}, welcome{giftClaimed}, achievements[{id,label,progress,target,done,claimed}], series[{series,size,total,claimed}], referral, now`. Daily/weekly blocks also carry `period, allDone, bonusPacks / pack`; streak carries `nextDay, rewards[], lastDayPack, graceLeft, total`; welcome carries `quests[], done, gift` | – | required | R | CONFIRMED (session) |
-| `POST /me/progress/claim` | Claim rewards `{ kind, id? }` → `{ progress, user, gained{chakra?,bonusPacks?,grants} }` | kind: `all` \| `streak` \| `series` (id = series name) \| `achievement` (id) | required | **W** | INFERRED |
+| `POST /me/progress/claim` | Claim rewards `{ kind, id? }` -> `{ progress, user, gained{chakra?,bonusPacks?,grants} }` | kind: `all` \| `streak` \| `series` (id = series name) \| `achievement` (id) | required | **W** | CONFIRMED (session) |
 | `GET /me/wishlist` / `PUT,DELETE /me/wishlist/:id` | Wishlist ids | | required | R / W | read CONFIRMED (session); write INFERRED, wrapped, not exposed in CLI |
 | `GET /me/wishlist/odds` | Odds of wishlisted cards | | required | R | DISCOVERED (wrapped) |
 | `GET /me/notifications?unread=1&limit=30`, `POST /me/notifications/read` | Notifications | | required | R / W | DISCOVERED |
@@ -111,12 +111,12 @@ Known pack errors: `chakra` / 402 (insufficient), `daily_limit`, `pack_unavailab
 
 | Method & path | Purpose | Params / body | Auth | R/W | Status |
 |---|---|---|---|---|---|
-| `GET /market/listings` | Search listings → `{ items: Listing[], total }` | `q`, `rarity`, `series`, `type` (`auction`\|`fixed`), `characterId`, `sort` (`ending`\|`newest`\|`price_asc`\|`price_desc`), `page` (1-based), `pageSize` (≤ 50) | optional (adds `isMine`, `myMaxBid`, `leading`) | R | CONFIRMED (server rejects `pageSize > 50` and unknown `sort` with 400) |
+| `GET /market/listings` | Search listings -> `{ items: Listing[], total }` | `q`, `rarity`, `series`, `type` (`auction`\|`fixed`), `characterId`, `sort` (`ending`\|`newest`\|`price_asc`\|`price_desc`), `page` (1-based), `pageSize` (≤ 50) | optional (adds `isMine`, `myMaxBid`, `leading`) | R | CONFIRMED (server rejects `pageSize > 50` and unknown `sort` with 400) |
 | `GET /market/listings/:id` | One listing | `id` uuid | optional | R | CONFIRMED (404 "Annonce inconnue") |
 | `GET /market/prices/:characterId` | `{ median7d, median30d, sales7d, sales30d, lastPrice, lastAt, lastSales[] }` | | none | R | CONFIRMED |
 | `GET /market/buy-orders?characterId=` | Order book `[{ price, qty }]` | | none | R | CONFIRMED |
-| `POST /market/listings/:id/bid` | Proxy bid `{ maxAmount }` (+ `x-pass` when available) → `{ user, listing, leading }` | | required | **W** | INFERRED |
-| `POST /market/listings/:id/buy` | Buy fixed price / buyout → `{ user, … }` | | required | **W** | INFERRED |
+| `POST /market/listings/:id/bid` | Proxy bid `{ maxAmount }` (+ `x-pass` when available) -> `{ user, listing, leading }` | | required | **W** | CONFIRMED (session) |
+| `POST /market/listings/:id/buy` | Buy fixed price / buyout -> `{ user, … }` | | required | **W** | INFERRED |
 | `POST /market/listings` | Create a listing | body from the sell form | required | W | DISCOVERED (not implemented) |
 | `POST /market/listings/:id/cancel` | Cancel own listing (deposit fee not refunded; refused with `has_bids`) | | required | W | DISCOVERED |
 | `POST /market/buy-orders`, `…/:id/fill`, `…/:id/cancel` | Buy orders | | required | W | DISCOVERED |
@@ -128,7 +128,7 @@ Known pack errors: `chakra` / 402 (insufficient), `daily_limit`, `pack_unavailab
 | `GET /trades/owned/:userId` | Character ids that player owns | | required | R | CONFIRMED (session) |
 | `GET /fair-play/with/:userId` | `{ enabled, freeRatio, ignoreBelow, receivedDays, pairDays, giveLeft, getLeft, giveBalanceLeft, getBalanceLeft, myReceivedLeft, theirReceivedLeft }` | | required | R | CONFIRMED (session) |
 | `GET /fair-play/prices?ids=` | Reference value per character `{ "<id>": chakra }` (≤ 200 ids) | | required | R | CONFIRMED (session) |
-| `POST /trades` | Propose `{ toUserId, give{cards,chakra}, want{cards,chakra}, message?, counterOf?, offerId? }` → `{ user, … }`; sent with `x-pass` like bids | | required | **W** | INFERRED |
+| `POST /trades` | Propose `{ toUserId, give{cards,chakra}, want{cards,chakra}, message?, counterOf?, offerId? }` -> `{ user, … }`; sent with `x-pass` like bids | | required | **W** | INFERRED |
 | `POST /trades/:id/cancel` | Withdraw my pending proposal (unlocks the cards) | | required | **W** | INFERRED |
 | `POST /trades/:id/accept`, `/decline`, `/trades/:id/messages` | Answer and talk in a trade | | required | W | DISCOVERED (not automated) |
 | `GET /market/chat?room&limit&before` | `{ items[{ id, text, room, createdAt, author{id,pseudo,…}, attachment? }], hasMore }`. Attachments: `{ kind:'card', tag:'seek'\|'trade', character }` or `{ kind:'listing', listingId, … }` | | optional | R | CONFIRMED |

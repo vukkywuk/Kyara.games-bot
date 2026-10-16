@@ -8,7 +8,7 @@ export interface GiveRules {
   keep: number;
   /** Rarities the bot may give; empty = all. */
   rarities: string[];
-  /** Characters never given. */
+  /** Character ids never given. */
   exclude: number[];
 }
 
@@ -30,9 +30,7 @@ export interface OfferRules {
   /** Pay between these percentages of the card's reference value. */
   minPayPct: number;
   maxPayPct: number;
-  /** Most chakra in one trade. */
   maxChakra: number;
-  /** Most cards given in one trade. */
   maxCards: number;
   /** Only ask for characters I do not own yet. */
   onlyMissing: boolean;
@@ -60,7 +58,7 @@ export interface PlanContext {
   rarityOf: (characterId: number) => string | undefined;
   owned: ReadonlySet<number>;
   wishlist: ReadonlySet<number>;
-  /** Their tradeable copies. */
+  /** Their tradeable copies, by character id. */
   theirAvailable: ReadonlyMap<number, number>;
   /** What they own (null when unknown). */
   theirOwned: ReadonlySet<number> | null;
@@ -189,5 +187,4 @@ function pickCards(ctx: PlanContext, give: GiveRules, lo: number, hi: number, ta
   return null;
 }
 
-/** Value of a planned side, for summaries. */
 export { sideValue };

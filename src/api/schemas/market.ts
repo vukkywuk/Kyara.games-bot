@@ -73,10 +73,7 @@ export const TradeOfferSchema = z.looseObject({
 });
 export const TradeOfferListSchema = z.array(TradeOfferSchema);
 
-/**
- * INFERRED from the market page: POST /api/market/listings/:id/bid returns
- * `{ user, listing, leading }`. The site reads `e.user`, `e.listing.currentBid`, `e.leading`.
- */
+/** CONFIRMED (session): POST /api/market/listings/:id/bid returns `{ user, listing, leading }`. */
 export const BidResultSchema = z.looseObject({
   user: MeSchema,
   listing: ListingSchema.partial().extend({ currentBid: z.number().nullable().optional() }),

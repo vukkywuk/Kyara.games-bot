@@ -128,7 +128,7 @@ export function Shell() {
 
 /**
  * A hidden page keeps seeing the location it had when it was last active. Without this,
- * every kept page would read the CURRENT URL (and e.g. open its own drawer for ?c=).
+ * every kept page would read the current URL (and e.g. open its own drawer for ?c=).
  */
 function FrozenLocation({ active, children }: { active: boolean; children: ReactNode }) {
   const live = useContext(UNSAFE_LocationContext);
@@ -137,7 +137,7 @@ function FrozenLocation({ active, children }: { active: boolean; children: React
   return <UNSAFE_LocationContext.Provider value={active ? live : frozen}>{children}</UNSAFE_LocationContext.Provider>;
 }
 
-/** Pages stay mounted (state, scroll and filters survive); only the active one is shown, with a short cross-fade. */
+/** Only the active kept page is shown, with a short cross-fade. */
 function KeptPage({ active, children }: { active: boolean; children: ReactNode }) {
   return (
     <motion.div

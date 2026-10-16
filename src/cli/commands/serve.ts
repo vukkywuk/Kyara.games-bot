@@ -51,7 +51,7 @@ export function registerServe(program: Command): void {
       });
       await server.start();
       print(`\nKyara is running at ${server.address}`);
-      print('Open it in your browser. Pair the extension from Settings → Session & bridge.');
+      print('Open it in your browser. Pair the extension from Settings -> Session & bridge.');
       print('Press Ctrl+C to stop.\n');
       await new Promise<void>((resolve) => {
         const stop = (): void => {
@@ -73,7 +73,7 @@ export function registerServe(program: Command): void {
     .action((_o: unknown, cmd: Command) => {
       const clients = readBridgeClients(path.join(getBot(cmd).config.dataDir, 'bridge.json'));
       if (isJson(cmd)) return printJson(clients);
-      if (!clients.length) return print('No extension paired. Run `kyara serve`, open the app, and pair from Settings → Session & bridge.');
+      if (!clients.length) return print('No extension paired. Run `kyara serve`, open the app, and pair from Settings -> Session & bridge.');
       print(table(clients, [
         { header: 'Id', get: (c) => c.id.slice(0, 8) },
         { header: 'Label', get: (c) => c.label },

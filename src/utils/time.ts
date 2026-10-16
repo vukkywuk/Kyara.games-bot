@@ -12,7 +12,7 @@ export const sleep = (ms: number, signal?: AbortSignal): Promise<void> =>
     signal?.addEventListener('abort', onAbort, { once: true });
   });
 
-/** "3 h 05 min", "2 j 4 h" style durations, but in English. */
+/** "2d 4h", "3h 05m", "4m 09s", "12s". */
 export function formatDuration(ms: number): string {
   if (!Number.isFinite(ms)) return '?';
   const sign = ms < 0 ? '-' : '';

@@ -48,7 +48,6 @@ export interface HttpClientOptions {
   /** Minimum spacing between two requests, in ms. */
   minIntervalMs?: number;
   logger?: Logger;
-  /** Injected in tests. */
   sleep?: (ms: number) => Promise<void>;
   random?: () => number;
 }
@@ -75,13 +74,9 @@ export function buildQuery(query: Query | undefined): string {
 }
 
 /**
- * The single HTTP entry point. Responsibilities:
- * - auth headers (`authorization: Bearer`, `x-device-id`), never logged;
- * - serialised, spaced requests (no unbounded concurrency);
- * - honouring `x-ratelimit-*` and `retry-after`;
- * - bounded retries with jittered backoff for GETs;
- * - zod validation of every response;
- * - typed errors.
+ * The single HTTP entry point to Kyara. Requests are serialised and spaced, follow the
+ * server's rate-limit headers, and every response is validated against its schema.
+ * Only GETs are retried; mutations are sent once (see `mutate`).
  */
 export class KyaraHttpClient {
   readonly clock = new ServerClock();

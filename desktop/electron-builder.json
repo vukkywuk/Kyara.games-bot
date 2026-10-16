@@ -1,0 +1,18 @@
+{
+  "appId": "local.kyarabot.desktop",
+  "productName": "Kyara Bot",
+  "copyright": "Personal tool. Not affiliated with Kyara.",
+  "directories": { "app": "desktop/app", "output": "desktop/release" },
+  "files": ["**/*", "!**/node_modules/**"],
+  "extraResources": [{ "from": "web/dist", "to": "web" }],
+  "npmRebuild": false,
+  "win": { "target": "nsis", "icon": "desktop/app/icon.png" },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "Kyara Bot"
+  }
+}

@@ -1,0 +1,4126 @@
+[
+  {
+    "id": "all",
+    "name": "Shōnen Mix",
+    "sub": "Tous les persos",
+    "kanji": "混",
+    "color": "#F5C518",
+    "glow": "rgba(245,197,24,.35)",
+    "price": 0,
+    "series": null,
+    "chakraPrice": 150,
+    "usesFreePacks": true,
+    "slots": [
+      "C",
+      "C",
+      "C",
+      "U",
+      "R"
+    ],
+    "limit": null,
+    "schedule": null,
+    "grantOnly": false,
+    "theme": null,
+    "rateUp": null,
+    "featuredPity": null,
+    "goldenEligible": true,
+    "rates": {
+      "poolSize": 6457,
+      "cardsByRarity": {
+        "C": 1418,
+        "U": 1671,
+        "R": 1684,
+        "E": 1010,
+        "L": 471,
+        "M": 203
+      },
+      "slots": [
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "U",
+          "pct": {
+            "C": 0,
+            "U": 65.8328,
+            "R": 30.0197,
+            "E": 3.6866,
+            "L": 0.395,
+            "M": 0.0658
+          }
+        },
+        {
+          "min": "R",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 87.8613,
+            "E": 10.79,
+            "L": 1.1561,
+            "M": 0.1927
+          }
+        }
+      ],
+      "perBooster": {
+        "C": {
+          "expected": 1.8605,
+          "atLeastOnePct": 94.5195,
+          "perCardPct": 0.1311
+        },
+        "U": {
+          "expected": 1.4085,
+          "atLeastOnePct": 85.5893,
+          "perCardPct": 0.0843
+        },
+        "R": {
+          "expected": 1.5209,
+          "atLeastOnePct": 94.0924,
+          "perCardPct": 0.0903
+        },
+        "E": {
+          "expected": 0.1868,
+          "atLeastOnePct": 17.6381,
+          "perCardPct": 0.0185
+        },
+        "L": {
+          "expected": 0.02,
+          "atLeastOnePct": 1.989,
+          "perCardPct": 0.0042
+        },
+        "M": {
+          "expected": 0.0033,
+          "atLeastOnePct": 0.3332,
+          "perCardPct": 0.0016
+        }
+      },
+      "pity": {
+        "threshold": 250,
+        "rarity": "M"
+      },
+      "golden": {
+        "slots": [
+          {
+            "min": "C",
+            "pct": {
+              "C": 62.0155,
+              "U": 25.0063,
+              "R": 11.4029,
+              "E": 1.4004,
+              "L": 0.15,
+              "M": 0.025
+            }
+          },
+          {
+            "min": "C",
+            "pct": {
+              "C": 62.0155,
+              "U": 25.0063,
+              "R": 11.4029,
+              "E": 1.4004,
+              "L": 0.15,
+              "M": 0.025
+            }
+          },
+          {
+            "min": "U",
+            "pct": {
+              "C": 0,
+              "U": 65.8328,
+              "R": 30.0197,
+              "E": 3.6866,
+              "L": 0.395,
+              "M": 0.0658
+            }
+          },
+          {
+            "min": "R",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 87.8613,
+              "E": 10.79,
+              "L": 1.1561,
+              "M": 0.1927
+            }
+          },
+          {
+            "min": "E",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 0,
+              "E": 88.8889,
+              "L": 9.5238,
+              "M": 1.5873
+            }
+          }
+        ],
+        "perBooster": {
+          "C": {
+            "expected": 1.2403,
+            "atLeastOnePct": 85.5718
+          },
+          "U": {
+            "expected": 1.1585,
+            "atLeastOnePct": 80.7841
+          },
+          "R": {
+            "expected": 1.4069,
+            "atLeastOnePct": 93.3321
+          },
+          "E": {
+            "expected": 1.0617,
+            "atLeastOnePct": 90.7187
+          },
+          "L": {
+            "expected": 0.1137,
+            "atLeastOnePct": 11.1901
+          },
+          "M": {
+            "expected": 0.019,
+            "atLeastOnePct": 1.8907
+          }
+        }
+      }
+    },
+    "showcase": [
+      {
+        "id": 127691,
+        "name": "Satoru Gojou",
+        "native": "五条悟",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b127691-9zqh1xpIubn7.png",
+        "favourites": 39257,
+        "rank": 0,
+        "rarity": "M",
+        "num": "#0001/6736",
+        "series": "JUJUTSU KAISEN",
+        "pow": 99,
+        "aura": 86
+      },
+      {
+        "id": 45627,
+        "name": "Levi",
+        "native": "リヴァイ",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b45627-CR68RyZmddGG.png",
+        "favourites": 38199,
+        "rank": 1,
+        "rarity": "M",
+        "num": "#0002/6736",
+        "series": "Attack on Titan",
+        "pow": 99,
+        "aura": 86
+      }
+    ]
+  },
+  {
+    "id": "top",
+    "name": "Hall of Fame",
+    "sub": "Top 1000 favoris",
+    "kanji": "王",
+    "color": "#FF4D2E",
+    "glow": "rgba(255,77,46,.35)",
+    "price": 750,
+    "series": null,
+    "chakraPrice": 750,
+    "usesFreePacks": false,
+    "slots": [
+      "C",
+      "C",
+      "C",
+      "U",
+      "R"
+    ],
+    "limit": null,
+    "schedule": null,
+    "grantOnly": false,
+    "theme": null,
+    "rateUp": null,
+    "featuredPity": null,
+    "goldenEligible": true,
+    "rates": {
+      "poolSize": 1000,
+      "cardsByRarity": {
+        "C": 0,
+        "U": 0,
+        "R": 0,
+        "E": 326,
+        "L": 471,
+        "M": 203
+      },
+      "slots": [
+        {
+          "min": "C",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 0,
+            "E": 88.8889,
+            "L": 9.5238,
+            "M": 1.5873
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 0,
+            "E": 88.8889,
+            "L": 9.5238,
+            "M": 1.5873
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 0,
+            "E": 88.8889,
+            "L": 9.5238,
+            "M": 1.5873
+          }
+        },
+        {
+          "min": "U",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 0,
+            "E": 88.8889,
+            "L": 9.5238,
+            "M": 1.5873
+          }
+        },
+        {
+          "min": "R",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 0,
+            "E": 88.8889,
+            "L": 9.5238,
+            "M": 1.5873
+          }
+        }
+      ],
+      "perBooster": {
+        "C": {
+          "expected": 0,
+          "atLeastOnePct": 0,
+          "perCardPct": 0
+        },
+        "U": {
+          "expected": 0,
+          "atLeastOnePct": 0,
+          "perCardPct": 0
+        },
+        "R": {
+          "expected": 0,
+          "atLeastOnePct": 0,
+          "perCardPct": 0
+        },
+        "E": {
+          "expected": 4.4444,
+          "atLeastOnePct": 99.9983,
+          "perCardPct": 1.3559
+        },
+        "L": {
+          "expected": 0.4762,
+          "atLeastOnePct": 39.3722,
+          "perCardPct": 0.1011
+        },
+        "M": {
+          "expected": 0.0794,
+          "atLeastOnePct": 7.6885,
+          "perCardPct": 0.0391
+        }
+      },
+      "pity": {
+        "threshold": 250,
+        "rarity": "M"
+      },
+      "golden": {
+        "slots": [
+          {
+            "min": "C",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 0,
+              "E": 88.8889,
+              "L": 9.5238,
+              "M": 1.5873
+            }
+          },
+          {
+            "min": "C",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 0,
+              "E": 88.8889,
+              "L": 9.5238,
+              "M": 1.5873
+            }
+          },
+          {
+            "min": "U",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 0,
+              "E": 88.8889,
+              "L": 9.5238,
+              "M": 1.5873
+            }
+          },
+          {
+            "min": "R",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 0,
+              "E": 88.8889,
+              "L": 9.5238,
+              "M": 1.5873
+            }
+          },
+          {
+            "min": "E",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 0,
+              "E": 88.8889,
+              "L": 9.5238,
+              "M": 1.5873
+            }
+          }
+        ],
+        "perBooster": {
+          "C": {
+            "expected": 0,
+            "atLeastOnePct": 0
+          },
+          "U": {
+            "expected": 0,
+            "atLeastOnePct": 0
+          },
+          "R": {
+            "expected": 0,
+            "atLeastOnePct": 0
+          },
+          "E": {
+            "expected": 4.4444,
+            "atLeastOnePct": 99.9983
+          },
+          "L": {
+            "expected": 0.4762,
+            "atLeastOnePct": 39.3722
+          },
+          "M": {
+            "expected": 0.0794,
+            "atLeastOnePct": 7.6885
+          }
+        }
+      }
+    },
+    "showcase": [
+      {
+        "id": 127691,
+        "name": "Satoru Gojou",
+        "native": "五条悟",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b127691-9zqh1xpIubn7.png",
+        "favourites": 39257,
+        "rank": 0,
+        "rarity": "M",
+        "num": "#0001/6736",
+        "series": "JUJUTSU KAISEN",
+        "pow": 99,
+        "aura": 86
+      },
+      {
+        "id": 45627,
+        "name": "Levi",
+        "native": "リヴァイ",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b45627-CR68RyZmddGG.png",
+        "favourites": 38199,
+        "rank": 1,
+        "rarity": "M",
+        "num": "#0002/6736",
+        "series": "Attack on Titan",
+        "pow": 99,
+        "aura": 86
+      }
+    ]
+  },
+  {
+    "id": "deep",
+    "name": "Deep Cuts",
+    "sub": "Rang 1000+ — plus de C/U",
+    "kanji": "影",
+    "color": "#4D9BFF",
+    "glow": "rgba(77,155,255,.35)",
+    "price": 100,
+    "series": null,
+    "chakraPrice": 100,
+    "usesFreePacks": false,
+    "slots": [
+      "C",
+      "C",
+      "C",
+      "U",
+      "R"
+    ],
+    "limit": null,
+    "schedule": null,
+    "grantOnly": false,
+    "theme": null,
+    "rateUp": null,
+    "featuredPity": null,
+    "goldenEligible": true,
+    "rates": {
+      "poolSize": 5457,
+      "cardsByRarity": {
+        "C": 1418,
+        "U": 1671,
+        "R": 1684,
+        "E": 684,
+        "L": 0,
+        "M": 0
+      },
+      "slots": [
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.1242,
+            "U": 25.0501,
+            "R": 11.4228,
+            "E": 1.4028,
+            "L": 0,
+            "M": 0
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.1242,
+            "U": 25.0501,
+            "R": 11.4228,
+            "E": 1.4028,
+            "L": 0,
+            "M": 0
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.1242,
+            "U": 25.0501,
+            "R": 11.4228,
+            "E": 1.4028,
+            "L": 0,
+            "M": 0
+          }
+        },
+        {
+          "min": "U",
+          "pct": {
+            "C": 0,
+            "U": 66.1376,
+            "R": 30.1587,
+            "E": 3.7037,
+            "L": 0,
+            "M": 0
+          }
+        },
+        {
+          "min": "R",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 89.0625,
+            "E": 10.9375,
+            "L": 0,
+            "M": 0
+          }
+        }
+      ],
+      "perBooster": {
+        "C": {
+          "expected": 1.8637,
+          "atLeastOnePct": 94.5664,
+          "perCardPct": 0.1314
+        },
+        "U": {
+          "expected": 1.4129,
+          "atLeastOnePct": 85.7429,
+          "perCardPct": 0.0845
+        },
+        "R": {
+          "expected": 1.5349,
+          "atLeastOnePct": 94.6912,
+          "perCardPct": 0.0911
+        },
+        "E": {
+          "expected": 0.1885,
+          "atLeastOnePct": 17.795,
+          "perCardPct": 0.0276
+        },
+        "L": {
+          "expected": 0,
+          "atLeastOnePct": 0,
+          "perCardPct": 0
+        },
+        "M": {
+          "expected": 0,
+          "atLeastOnePct": 0,
+          "perCardPct": 0
+        }
+      },
+      "pity": {
+        "threshold": 250,
+        "rarity": null
+      },
+      "golden": {
+        "slots": [
+          {
+            "min": "C",
+            "pct": {
+              "C": 62.1242,
+              "U": 25.0501,
+              "R": 11.4228,
+              "E": 1.4028,
+              "L": 0,
+              "M": 0
+            }
+          },
+          {
+            "min": "C",
+            "pct": {
+              "C": 62.1242,
+              "U": 25.0501,
+              "R": 11.4228,
+              "E": 1.4028,
+              "L": 0,
+              "M": 0
+            }
+          },
+          {
+            "min": "U",
+            "pct": {
+              "C": 0,
+              "U": 66.1376,
+              "R": 30.1587,
+              "E": 3.7037,
+              "L": 0,
+              "M": 0
+            }
+          },
+          {
+            "min": "R",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 89.0625,
+              "E": 10.9375,
+              "L": 0,
+              "M": 0
+            }
+          },
+          {
+            "min": "E",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 0,
+              "E": 100,
+              "L": 0,
+              "M": 0
+            }
+          }
+        ],
+        "perBooster": {
+          "C": {
+            "expected": 1.2425,
+            "atLeastOnePct": 85.6543
+          },
+          "U": {
+            "expected": 1.1624,
+            "atLeastOnePct": 80.9778
+          },
+          "R": {
+            "expected": 1.4207,
+            "atLeastOnePct": 94.0066
+          },
+          "E": {
+            "expected": 1.1745,
+            "atLeastOnePct": 100
+          },
+          "L": {
+            "expected": 0,
+            "atLeastOnePct": 0
+          },
+          "M": {
+            "expected": 0,
+            "atLeastOnePct": 0
+          }
+        }
+      }
+    },
+    "showcase": [
+      {
+        "id": 147892,
+        "name": "Kaede Honjou",
+        "native": "本条楓",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b147892-sL0t1VEMhC6p.png",
+        "favourites": 1691,
+        "rank": 1000,
+        "rarity": "E",
+        "num": "#1001/6736",
+        "series": "BOFURI: I Don't Want to Get Hurt, so I'll Max Out My Defense.",
+        "pow": 90,
+        "aura": 60
+      },
+      {
+        "id": 24194,
+        "name": "Karen Araragi",
+        "native": "阿良々木火憐",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/n24194-SZwAIpP4IDum.jpg",
+        "favourites": 1688,
+        "rank": 1001,
+        "rarity": "E",
+        "num": "#1002/6736",
+        "series": "Bakemonogatari",
+        "pow": 90,
+        "aura": 60
+      }
+    ]
+  },
+  {
+    "id": "daily",
+    "name": "Pack du jour",
+    "sub": "Un thème par jour, E+ garantie",
+    "kanji": "日",
+    "color": "#F5C518",
+    "glow": "rgba(245,197,24,.35)",
+    "price": 0,
+    "series": null,
+    "chakraPrice": 0,
+    "usesFreePacks": false,
+    "slots": [
+      "C",
+      "C",
+      "U",
+      "R",
+      "E"
+    ],
+    "limit": {
+      "perDay": 1
+    },
+    "schedule": null,
+    "grantOnly": false,
+    "theme": {
+      "id": "sport",
+      "name": "Sport"
+    },
+    "rateUp": null,
+    "featuredPity": null,
+    "goldenEligible": false,
+    "rates": {
+      "poolSize": 351,
+      "cardsByRarity": {
+        "C": 88,
+        "U": 85,
+        "R": 83,
+        "E": 56,
+        "L": 33,
+        "M": 6
+      },
+      "slots": [
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "U",
+          "pct": {
+            "C": 0,
+            "U": 65.8328,
+            "R": 30.0197,
+            "E": 3.6866,
+            "L": 0.395,
+            "M": 0.0658
+          }
+        },
+        {
+          "min": "R",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 87.8613,
+            "E": 10.79,
+            "L": 1.1561,
+            "M": 0.1927
+          }
+        },
+        {
+          "min": "E",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 0,
+            "E": 88.8889,
+            "L": 9.5238,
+            "M": 1.5873
+          }
+        }
+      ],
+      "perBooster": {
+        "C": {
+          "expected": 1.2403,
+          "atLeastOnePct": 85.5718,
+          "perCardPct": 1.4045
+        },
+        "U": {
+          "expected": 1.1585,
+          "atLeastOnePct": 80.7841,
+          "perCardPct": 1.3575
+        },
+        "R": {
+          "expected": 1.4069,
+          "atLeastOnePct": 93.3321,
+          "perCardPct": 1.6871
+        },
+        "E": {
+          "expected": 1.0617,
+          "atLeastOnePct": 90.7187,
+          "perCardPct": 1.8907
+        },
+        "L": {
+          "expected": 0.1137,
+          "atLeastOnePct": 11.1901,
+          "perCardPct": 0.3445
+        },
+        "M": {
+          "expected": 0.019,
+          "atLeastOnePct": 1.8907,
+          "perCardPct": 0.3158
+        }
+      },
+      "pity": {
+        "threshold": 250,
+        "rarity": "M"
+      },
+      "golden": null
+    },
+    "showcase": [
+      {
+        "id": 64769,
+        "name": "Shouyou Hinata",
+        "native": "日向翔陽",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b64769-WoWlCMLLgJ14.png",
+        "favourites": 14596,
+        "rank": 63,
+        "rarity": "M",
+        "num": "#0064/6736",
+        "series": "HAIKYU!!",
+        "pow": 98,
+        "aura": 78
+      },
+      {
+        "id": 64771,
+        "name": "Tobio Kageyama",
+        "native": "影山飛雄",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b64771-BuCVs7B8bBdh.png",
+        "favourites": 12500,
+        "rank": 88,
+        "rarity": "M",
+        "num": "#0089/6736",
+        "series": "HAIKYU!!",
+        "pow": 98,
+        "aura": 77
+      }
+    ]
+  },
+  {
+    "id": "mini",
+    "name": "Mini-booster",
+    "sub": "3 cartes",
+    "kanji": "小",
+    "color": "#9AA4B2",
+    "glow": "rgba(154,164,178,.35)",
+    "price": 100,
+    "series": null,
+    "chakraPrice": 100,
+    "usesFreePacks": false,
+    "slots": [
+      "C",
+      "U",
+      "R"
+    ],
+    "limit": null,
+    "schedule": null,
+    "grantOnly": false,
+    "theme": null,
+    "rateUp": null,
+    "featuredPity": null,
+    "goldenEligible": false,
+    "rates": {
+      "poolSize": 6457,
+      "cardsByRarity": {
+        "C": 1418,
+        "U": 1671,
+        "R": 1684,
+        "E": 1010,
+        "L": 471,
+        "M": 203
+      },
+      "slots": [
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "U",
+          "pct": {
+            "C": 0,
+            "U": 65.8328,
+            "R": 30.0197,
+            "E": 3.6866,
+            "L": 0.395,
+            "M": 0.0658
+          }
+        },
+        {
+          "min": "R",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 87.8613,
+            "E": 10.79,
+            "L": 1.1561,
+            "M": 0.1927
+          }
+        }
+      ],
+      "perBooster": {
+        "C": {
+          "expected": 0.6202,
+          "atLeastOnePct": 62.0155,
+          "perCardPct": 0.0437
+        },
+        "U": {
+          "expected": 0.9084,
+          "atLeastOnePct": 74.3767,
+          "perCardPct": 0.0544
+        },
+        "R": {
+          "expected": 1.2928,
+          "atLeastOnePct": 92.4739,
+          "perCardPct": 0.0768
+        },
+        "E": {
+          "expected": 0.1588,
+          "atLeastOnePct": 15.282,
+          "perCardPct": 0.0157
+        },
+        "L": {
+          "expected": 0.017,
+          "atLeastOnePct": 1.6942,
+          "perCardPct": 0.0036
+        },
+        "M": {
+          "expected": 0.0028,
+          "atLeastOnePct": 0.2833,
+          "perCardPct": 0.0014
+        }
+      },
+      "pity": {
+        "threshold": 250,
+        "rarity": "M"
+      },
+      "golden": null
+    },
+    "showcase": [
+      {
+        "id": 127691,
+        "name": "Satoru Gojou",
+        "native": "五条悟",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b127691-9zqh1xpIubn7.png",
+        "favourites": 39257,
+        "rank": 0,
+        "rarity": "M",
+        "num": "#0001/6736",
+        "series": "JUJUTSU KAISEN",
+        "pow": 99,
+        "aura": 86
+      },
+      {
+        "id": 45627,
+        "name": "Levi",
+        "native": "リヴァイ",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b45627-CR68RyZmddGG.png",
+        "favourites": 38199,
+        "rank": 1,
+        "rarity": "M",
+        "num": "#0002/6736",
+        "series": "Attack on Titan",
+        "pow": 99,
+        "aura": 86
+      }
+    ]
+  },
+  {
+    "id": "chest",
+    "name": "Coffret",
+    "sub": "20 cartes · 1 Épique et 3 Rares garanties",
+    "kanji": "箱",
+    "color": "#B46CFF",
+    "glow": "rgba(180,108,255,.35)",
+    "price": 550,
+    "series": null,
+    "chakraPrice": 550,
+    "usesFreePacks": false,
+    "slots": [
+      "C",
+      "C",
+      "C",
+      "C",
+      "C",
+      "C",
+      "C",
+      "C",
+      "C",
+      "C",
+      "C",
+      "C",
+      "U",
+      "U",
+      "U",
+      "U",
+      "R",
+      "R",
+      "R",
+      "E"
+    ],
+    "limit": null,
+    "schedule": null,
+    "grantOnly": false,
+    "theme": null,
+    "rateUp": null,
+    "featuredPity": null,
+    "goldenEligible": false,
+    "rates": {
+      "poolSize": 6457,
+      "cardsByRarity": {
+        "C": 1418,
+        "U": 1671,
+        "R": 1684,
+        "E": 1010,
+        "L": 471,
+        "M": 203
+      },
+      "slots": [
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "U",
+          "pct": {
+            "C": 0,
+            "U": 65.8328,
+            "R": 30.0197,
+            "E": 3.6866,
+            "L": 0.395,
+            "M": 0.0658
+          }
+        },
+        {
+          "min": "U",
+          "pct": {
+            "C": 0,
+            "U": 65.8328,
+            "R": 30.0197,
+            "E": 3.6866,
+            "L": 0.395,
+            "M": 0.0658
+          }
+        },
+        {
+          "min": "U",
+          "pct": {
+            "C": 0,
+            "U": 65.8328,
+            "R": 30.0197,
+            "E": 3.6866,
+            "L": 0.395,
+            "M": 0.0658
+          }
+        },
+        {
+          "min": "U",
+          "pct": {
+            "C": 0,
+            "U": 65.8328,
+            "R": 30.0197,
+            "E": 3.6866,
+            "L": 0.395,
+            "M": 0.0658
+          }
+        },
+        {
+          "min": "R",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 87.8613,
+            "E": 10.79,
+            "L": 1.1561,
+            "M": 0.1927
+          }
+        },
+        {
+          "min": "R",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 87.8613,
+            "E": 10.79,
+            "L": 1.1561,
+            "M": 0.1927
+          }
+        },
+        {
+          "min": "R",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 87.8613,
+            "E": 10.79,
+            "L": 1.1561,
+            "M": 0.1927
+          }
+        },
+        {
+          "min": "E",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 0,
+            "E": 88.8889,
+            "L": 9.5238,
+            "M": 1.5873
+          }
+        }
+      ],
+      "perBooster": {
+        "C": {
+          "expected": 7.4419,
+          "atLeastOnePct": 99.9991,
+          "perCardPct": 0.5236
+        },
+        "U": {
+          "expected": 5.6341,
+          "atLeastOnePct": 99.9569,
+          "perCardPct": 0.3366
+        },
+        "R": {
+          "expected": 5.205,
+          "atLeastOnePct": 99.99,
+          "perCardPct": 0.3087
+        },
+        "E": {
+          "expected": 1.5281,
+          "atLeastOnePct": 94.2688,
+          "perCardPct": 0.1512
+        },
+        "L": {
+          "expected": 0.1637,
+          "atLeastOnePct": 15.5336,
+          "perCardPct": 0.0348
+        },
+        "M": {
+          "expected": 0.0273,
+          "atLeastOnePct": 2.7049,
+          "perCardPct": 0.0134
+        }
+      },
+      "pity": {
+        "threshold": 250,
+        "rarity": "M"
+      },
+      "golden": null
+    },
+    "showcase": [
+      {
+        "id": 127691,
+        "name": "Satoru Gojou",
+        "native": "五条悟",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b127691-9zqh1xpIubn7.png",
+        "favourites": 39257,
+        "rank": 0,
+        "rarity": "M",
+        "num": "#0001/6736",
+        "series": "JUJUTSU KAISEN",
+        "pow": 99,
+        "aura": 86
+      },
+      {
+        "id": 45627,
+        "name": "Levi",
+        "native": "リヴァイ",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b45627-CR68RyZmddGG.png",
+        "favourites": 38199,
+        "rank": 1,
+        "rarity": "M",
+        "num": "#0002/6736",
+        "series": "Attack on Titan",
+        "pow": 99,
+        "aura": 86
+      }
+    ]
+  },
+  {
+    "id": "premium",
+    "name": "Prestige",
+    "sub": "Légendaires et Mythiques ×2,7",
+    "kanji": "極",
+    "color": "#FF4D2E",
+    "glow": "rgba(255,77,46,.35)",
+    "price": 575,
+    "series": null,
+    "chakraPrice": 575,
+    "usesFreePacks": false,
+    "slots": [
+      "U",
+      "R",
+      "R",
+      "E",
+      "E"
+    ],
+    "limit": null,
+    "schedule": null,
+    "grantOnly": false,
+    "theme": null,
+    "rateUp": null,
+    "featuredPity": null,
+    "goldenEligible": false,
+    "rates": {
+      "poolSize": 6457,
+      "cardsByRarity": {
+        "C": 1418,
+        "U": 1671,
+        "R": 1684,
+        "E": 1010,
+        "L": 471,
+        "M": 203
+      },
+      "slots": [
+        {
+          "min": "U",
+          "pct": {
+            "C": 0,
+            "U": 65.3253,
+            "R": 29.7883,
+            "E": 3.6582,
+            "L": 1.0452,
+            "M": 0.1829
+          }
+        },
+        {
+          "min": "R",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 85.9081,
+            "E": 10.5501,
+            "L": 3.0143,
+            "M": 0.5275
+          }
+        },
+        {
+          "min": "R",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 85.9081,
+            "E": 10.5501,
+            "L": 3.0143,
+            "M": 0.5275
+          }
+        },
+        {
+          "min": "E",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 0,
+            "E": 74.8663,
+            "L": 21.3904,
+            "M": 3.7433
+          }
+        },
+        {
+          "min": "E",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 0,
+            "E": 74.8663,
+            "L": 21.3904,
+            "M": 3.7433
+          }
+        }
+      ],
+      "perBooster": {
+        "C": {
+          "expected": 0,
+          "atLeastOnePct": 0,
+          "perCardPct": 0
+        },
+        "U": {
+          "expected": 0.6533,
+          "atLeastOnePct": 65.3253,
+          "perCardPct": 0.0391
+        },
+        "R": {
+          "expected": 2.016,
+          "atLeastOnePct": 98.6057,
+          "perCardPct": 0.1197
+        },
+        "E": {
+          "expected": 1.7449,
+          "atLeastOnePct": 95.1305,
+          "perCardPct": 0.1727
+        },
+        "L": {
+          "expected": 0.4985,
+          "atLeastOnePct": 42.482,
+          "perCardPct": 0.1058
+        },
+        "M": {
+          "expected": 0.0872,
+          "atLeastOnePct": 8.4891,
+          "perCardPct": 0.043
+        }
+      },
+      "pity": {
+        "threshold": 250,
+        "rarity": "M"
+      },
+      "golden": null
+    },
+    "showcase": [
+      {
+        "id": 127691,
+        "name": "Satoru Gojou",
+        "native": "五条悟",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b127691-9zqh1xpIubn7.png",
+        "favourites": 39257,
+        "rank": 0,
+        "rarity": "M",
+        "num": "#0001/6736",
+        "series": "JUJUTSU KAISEN",
+        "pow": 99,
+        "aura": 86
+      },
+      {
+        "id": 45627,
+        "name": "Levi",
+        "native": "リヴァイ",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b45627-CR68RyZmddGG.png",
+        "favourites": 38199,
+        "rank": 1,
+        "rarity": "M",
+        "num": "#0002/6736",
+        "series": "Attack on Titan",
+        "pow": 99,
+        "aura": 86
+      }
+    ]
+  },
+  {
+    "id": "shonen",
+    "name": "Shōnen",
+    "sub": "Œuvres shōnen",
+    "kanji": "少",
+    "color": "#FF8A00",
+    "glow": "rgba(255,138,0,.35)",
+    "price": 0,
+    "series": null,
+    "chakraPrice": 175,
+    "usesFreePacks": true,
+    "slots": [
+      "C",
+      "C",
+      "C",
+      "U",
+      "R"
+    ],
+    "limit": null,
+    "schedule": null,
+    "grantOnly": false,
+    "theme": null,
+    "rateUp": null,
+    "featuredPity": null,
+    "goldenEligible": true,
+    "rates": {
+      "poolSize": 1738,
+      "cardsByRarity": {
+        "C": 527,
+        "U": 421,
+        "R": 316,
+        "E": 249,
+        "L": 152,
+        "M": 73
+      },
+      "slots": [
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "U",
+          "pct": {
+            "C": 0,
+            "U": 65.8328,
+            "R": 30.0197,
+            "E": 3.6866,
+            "L": 0.395,
+            "M": 0.0658
+          }
+        },
+        {
+          "min": "R",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 87.8613,
+            "E": 10.79,
+            "L": 1.1561,
+            "M": 0.1927
+          }
+        }
+      ],
+      "perBooster": {
+        "C": {
+          "expected": 1.8605,
+          "atLeastOnePct": 94.5195,
+          "perCardPct": 0.3526
+        },
+        "U": {
+          "expected": 1.4085,
+          "atLeastOnePct": 85.5893,
+          "perCardPct": 0.3342
+        },
+        "R": {
+          "expected": 1.5209,
+          "atLeastOnePct": 94.0924,
+          "perCardPct": 0.4806
+        },
+        "E": {
+          "expected": 0.1868,
+          "atLeastOnePct": 17.6381,
+          "perCardPct": 0.075
+        },
+        "L": {
+          "expected": 0.02,
+          "atLeastOnePct": 1.989,
+          "perCardPct": 0.0132
+        },
+        "M": {
+          "expected": 0.0033,
+          "atLeastOnePct": 0.3332,
+          "perCardPct": 0.0046
+        }
+      },
+      "pity": {
+        "threshold": 250,
+        "rarity": "M"
+      },
+      "golden": {
+        "slots": [
+          {
+            "min": "C",
+            "pct": {
+              "C": 62.0155,
+              "U": 25.0063,
+              "R": 11.4029,
+              "E": 1.4004,
+              "L": 0.15,
+              "M": 0.025
+            }
+          },
+          {
+            "min": "C",
+            "pct": {
+              "C": 62.0155,
+              "U": 25.0063,
+              "R": 11.4029,
+              "E": 1.4004,
+              "L": 0.15,
+              "M": 0.025
+            }
+          },
+          {
+            "min": "U",
+            "pct": {
+              "C": 0,
+              "U": 65.8328,
+              "R": 30.0197,
+              "E": 3.6866,
+              "L": 0.395,
+              "M": 0.0658
+            }
+          },
+          {
+            "min": "R",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 87.8613,
+              "E": 10.79,
+              "L": 1.1561,
+              "M": 0.1927
+            }
+          },
+          {
+            "min": "E",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 0,
+              "E": 88.8889,
+              "L": 9.5238,
+              "M": 1.5873
+            }
+          }
+        ],
+        "perBooster": {
+          "C": {
+            "expected": 1.2403,
+            "atLeastOnePct": 85.5718
+          },
+          "U": {
+            "expected": 1.1585,
+            "atLeastOnePct": 80.7841
+          },
+          "R": {
+            "expected": 1.4069,
+            "atLeastOnePct": 93.3321
+          },
+          "E": {
+            "expected": 1.0617,
+            "atLeastOnePct": 90.7187
+          },
+          "L": {
+            "expected": 0.1137,
+            "atLeastOnePct": 11.1901
+          },
+          "M": {
+            "expected": 0.019,
+            "atLeastOnePct": 1.8907
+          }
+        }
+      }
+    },
+    "showcase": [
+      {
+        "id": 127691,
+        "name": "Satoru Gojou",
+        "native": "五条悟",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b127691-9zqh1xpIubn7.png",
+        "favourites": 39257,
+        "rank": 0,
+        "rarity": "M",
+        "num": "#0001/6736",
+        "series": "JUJUTSU KAISEN",
+        "pow": 99,
+        "aura": 86
+      },
+      {
+        "id": 40,
+        "name": "Luffy Monkey",
+        "native": "モンキー・D・ルフィ",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b40-MNypXsxSRb1R.png",
+        "favourites": 35970,
+        "rank": 2,
+        "rarity": "M",
+        "num": "#0003/6736",
+        "series": "ONE PIECE",
+        "pow": 99,
+        "aura": 85
+      }
+    ]
+  },
+  {
+    "id": "isekai",
+    "name": "Isekai",
+    "sub": "Un autre monde",
+    "kanji": "異",
+    "color": "#2EC4B6",
+    "glow": "rgba(46,196,182,.35)",
+    "price": 0,
+    "series": null,
+    "chakraPrice": 175,
+    "usesFreePacks": true,
+    "slots": [
+      "C",
+      "C",
+      "C",
+      "U",
+      "R"
+    ],
+    "limit": null,
+    "schedule": null,
+    "grantOnly": false,
+    "theme": null,
+    "rateUp": null,
+    "featuredPity": null,
+    "goldenEligible": true,
+    "rates": {
+      "poolSize": 475,
+      "cardsByRarity": {
+        "C": 108,
+        "U": 133,
+        "R": 132,
+        "E": 67,
+        "L": 23,
+        "M": 12
+      },
+      "slots": [
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "U",
+          "pct": {
+            "C": 0,
+            "U": 65.8328,
+            "R": 30.0197,
+            "E": 3.6866,
+            "L": 0.395,
+            "M": 0.0658
+          }
+        },
+        {
+          "min": "R",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 87.8613,
+            "E": 10.79,
+            "L": 1.1561,
+            "M": 0.1927
+          }
+        }
+      ],
+      "perBooster": {
+        "C": {
+          "expected": 1.8605,
+          "atLeastOnePct": 94.5195,
+          "perCardPct": 1.7128
+        },
+        "U": {
+          "expected": 1.4085,
+          "atLeastOnePct": 85.5893,
+          "perCardPct": 1.0552
+        },
+        "R": {
+          "expected": 1.5209,
+          "atLeastOnePct": 94.0924,
+          "perCardPct": 1.1481
+        },
+        "E": {
+          "expected": 0.1868,
+          "atLeastOnePct": 17.6381,
+          "perCardPct": 0.2785
+        },
+        "L": {
+          "expected": 0.02,
+          "atLeastOnePct": 1.989,
+          "perCardPct": 0.087
+        },
+        "M": {
+          "expected": 0.0033,
+          "atLeastOnePct": 0.3332,
+          "perCardPct": 0.0278
+        }
+      },
+      "pity": {
+        "threshold": 250,
+        "rarity": "M"
+      },
+      "golden": {
+        "slots": [
+          {
+            "min": "C",
+            "pct": {
+              "C": 62.0155,
+              "U": 25.0063,
+              "R": 11.4029,
+              "E": 1.4004,
+              "L": 0.15,
+              "M": 0.025
+            }
+          },
+          {
+            "min": "C",
+            "pct": {
+              "C": 62.0155,
+              "U": 25.0063,
+              "R": 11.4029,
+              "E": 1.4004,
+              "L": 0.15,
+              "M": 0.025
+            }
+          },
+          {
+            "min": "U",
+            "pct": {
+              "C": 0,
+              "U": 65.8328,
+              "R": 30.0197,
+              "E": 3.6866,
+              "L": 0.395,
+              "M": 0.0658
+            }
+          },
+          {
+            "min": "R",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 87.8613,
+              "E": 10.79,
+              "L": 1.1561,
+              "M": 0.1927
+            }
+          },
+          {
+            "min": "E",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 0,
+              "E": 88.8889,
+              "L": 9.5238,
+              "M": 1.5873
+            }
+          }
+        ],
+        "perBooster": {
+          "C": {
+            "expected": 1.2403,
+            "atLeastOnePct": 85.5718
+          },
+          "U": {
+            "expected": 1.1585,
+            "atLeastOnePct": 80.7841
+          },
+          "R": {
+            "expected": 1.4069,
+            "atLeastOnePct": 93.3321
+          },
+          "E": {
+            "expected": 1.0617,
+            "atLeastOnePct": 90.7187
+          },
+          "L": {
+            "expected": 0.1137,
+            "atLeastOnePct": 11.1901
+          },
+          "M": {
+            "expected": 0.019,
+            "atLeastOnePct": 1.8907
+          }
+        }
+      }
+    },
+    "showcase": [
+      {
+        "id": 88572,
+        "name": "Emilia",
+        "native": "エミリア",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b88572-IzTwXEHSobRs.jpg",
+        "favourites": 27725,
+        "rank": 7,
+        "rarity": "M",
+        "num": "#0008/6736",
+        "series": "Re:ZERO -Starting Life in Another World",
+        "pow": 99,
+        "aura": 83
+      },
+      {
+        "id": 89361,
+        "name": "Megumin",
+        "native": "めぐみん",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b89361-tq8PQQ4MmF0M.png",
+        "favourites": 16674,
+        "rank": 38,
+        "rarity": "M",
+        "num": "#0039/6736",
+        "series": "KONOSUBA -God's blessing on this wonderful world!",
+        "pow": 99,
+        "aura": 79
+      }
+    ]
+  },
+  {
+    "id": "seinen",
+    "name": "Seinen",
+    "sub": "Œuvres seinen",
+    "kanji": "青",
+    "color": "#7C8CFF",
+    "glow": "rgba(124,140,255,.35)",
+    "price": 0,
+    "series": null,
+    "chakraPrice": 175,
+    "usesFreePacks": true,
+    "slots": [
+      "C",
+      "C",
+      "C",
+      "U",
+      "R"
+    ],
+    "limit": null,
+    "schedule": null,
+    "grantOnly": false,
+    "theme": null,
+    "rateUp": null,
+    "featuredPity": null,
+    "goldenEligible": true,
+    "rates": {
+      "poolSize": 432,
+      "cardsByRarity": {
+        "C": 81,
+        "U": 106,
+        "R": 123,
+        "E": 87,
+        "L": 24,
+        "M": 11
+      },
+      "slots": [
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "U",
+          "pct": {
+            "C": 0,
+            "U": 65.8328,
+            "R": 30.0197,
+            "E": 3.6866,
+            "L": 0.395,
+            "M": 0.0658
+          }
+        },
+        {
+          "min": "R",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 87.8613,
+            "E": 10.79,
+            "L": 1.1561,
+            "M": 0.1927
+          }
+        }
+      ],
+      "perBooster": {
+        "C": {
+          "expected": 1.8605,
+          "atLeastOnePct": 94.5195,
+          "perCardPct": 2.2793
+        },
+        "U": {
+          "expected": 1.4085,
+          "atLeastOnePct": 85.5893,
+          "perCardPct": 1.3227
+        },
+        "R": {
+          "expected": 1.5209,
+          "atLeastOnePct": 94.0924,
+          "perCardPct": 1.2318
+        },
+        "E": {
+          "expected": 0.1868,
+          "atLeastOnePct": 17.6381,
+          "perCardPct": 0.2145
+        },
+        "L": {
+          "expected": 0.02,
+          "atLeastOnePct": 1.989,
+          "perCardPct": 0.0834
+        },
+        "M": {
+          "expected": 0.0033,
+          "atLeastOnePct": 0.3332,
+          "perCardPct": 0.0303
+        }
+      },
+      "pity": {
+        "threshold": 250,
+        "rarity": "M"
+      },
+      "golden": {
+        "slots": [
+          {
+            "min": "C",
+            "pct": {
+              "C": 62.0155,
+              "U": 25.0063,
+              "R": 11.4029,
+              "E": 1.4004,
+              "L": 0.15,
+              "M": 0.025
+            }
+          },
+          {
+            "min": "C",
+            "pct": {
+              "C": 62.0155,
+              "U": 25.0063,
+              "R": 11.4029,
+              "E": 1.4004,
+              "L": 0.15,
+              "M": 0.025
+            }
+          },
+          {
+            "min": "U",
+            "pct": {
+              "C": 0,
+              "U": 65.8328,
+              "R": 30.0197,
+              "E": 3.6866,
+              "L": 0.395,
+              "M": 0.0658
+            }
+          },
+          {
+            "min": "R",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 87.8613,
+              "E": 10.79,
+              "L": 1.1561,
+              "M": 0.1927
+            }
+          },
+          {
+            "min": "E",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 0,
+              "E": 88.8889,
+              "L": 9.5238,
+              "M": 1.5873
+            }
+          }
+        ],
+        "perBooster": {
+          "C": {
+            "expected": 1.2403,
+            "atLeastOnePct": 85.5718
+          },
+          "U": {
+            "expected": 1.1585,
+            "atLeastOnePct": 80.7841
+          },
+          "R": {
+            "expected": 1.4069,
+            "atLeastOnePct": 93.3321
+          },
+          "E": {
+            "expected": 1.0617,
+            "atLeastOnePct": 90.7187
+          },
+          "L": {
+            "expected": 0.1137,
+            "atLeastOnePct": 11.1901
+          },
+          "M": {
+            "expected": 0.019,
+            "atLeastOnePct": 1.8907
+          }
+        }
+      }
+    },
+    "showcase": [
+      {
+        "id": 88572,
+        "name": "Emilia",
+        "native": "エミリア",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b88572-IzTwXEHSobRs.jpg",
+        "favourites": 27725,
+        "rank": 7,
+        "rarity": "M",
+        "num": "#0008/6736",
+        "series": "Re:ZERO -Starting Life in Another World",
+        "pow": 99,
+        "aura": 83
+      },
+      {
+        "id": 422,
+        "name": "Guts",
+        "native": "ガッツ",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b422-XTaiTuvRohsV.png",
+        "favourites": 23637,
+        "rank": 12,
+        "rarity": "M",
+        "num": "#0013/6736",
+        "series": "Berserk",
+        "pow": 99,
+        "aura": 82
+      }
+    ]
+  },
+  {
+    "id": "shojo",
+    "name": "Shōjo",
+    "sub": "Œuvres shōjo",
+    "kanji": "花",
+    "color": "#FF8FC7",
+    "glow": "rgba(255,143,199,.35)",
+    "price": 0,
+    "series": null,
+    "chakraPrice": 175,
+    "usesFreePacks": true,
+    "slots": [
+      "C",
+      "C",
+      "C",
+      "U",
+      "R"
+    ],
+    "limit": null,
+    "schedule": null,
+    "grantOnly": false,
+    "theme": null,
+    "rateUp": null,
+    "featuredPity": null,
+    "goldenEligible": true,
+    "rates": {
+      "poolSize": 220,
+      "cardsByRarity": {
+        "C": 32,
+        "U": 59,
+        "R": 58,
+        "E": 51,
+        "L": 17,
+        "M": 3
+      },
+      "slots": [
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "U",
+          "pct": {
+            "C": 0,
+            "U": 65.8328,
+            "R": 30.0197,
+            "E": 3.6866,
+            "L": 0.395,
+            "M": 0.0658
+          }
+        },
+        {
+          "min": "R",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 87.8613,
+            "E": 10.79,
+            "L": 1.1561,
+            "M": 0.1927
+          }
+        }
+      ],
+      "perBooster": {
+        "C": {
+          "expected": 1.8605,
+          "atLeastOnePct": 94.5195,
+          "perCardPct": 5.702
+        },
+        "U": {
+          "expected": 1.4085,
+          "atLeastOnePct": 85.5893,
+          "perCardPct": 2.3678
+        },
+        "R": {
+          "expected": 1.5209,
+          "atLeastOnePct": 94.0924,
+          "perCardPct": 2.6013
+        },
+        "E": {
+          "expected": 0.1868,
+          "atLeastOnePct": 17.6381,
+          "perCardPct": 0.3658
+        },
+        "L": {
+          "expected": 0.02,
+          "atLeastOnePct": 1.989,
+          "perCardPct": 0.1177
+        },
+        "M": {
+          "expected": 0.0033,
+          "atLeastOnePct": 0.3332,
+          "perCardPct": 0.1111
+        }
+      },
+      "pity": {
+        "threshold": 250,
+        "rarity": "M"
+      },
+      "golden": {
+        "slots": [
+          {
+            "min": "C",
+            "pct": {
+              "C": 62.0155,
+              "U": 25.0063,
+              "R": 11.4029,
+              "E": 1.4004,
+              "L": 0.15,
+              "M": 0.025
+            }
+          },
+          {
+            "min": "C",
+            "pct": {
+              "C": 62.0155,
+              "U": 25.0063,
+              "R": 11.4029,
+              "E": 1.4004,
+              "L": 0.15,
+              "M": 0.025
+            }
+          },
+          {
+            "min": "U",
+            "pct": {
+              "C": 0,
+              "U": 65.8328,
+              "R": 30.0197,
+              "E": 3.6866,
+              "L": 0.395,
+              "M": 0.0658
+            }
+          },
+          {
+            "min": "R",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 87.8613,
+              "E": 10.79,
+              "L": 1.1561,
+              "M": 0.1927
+            }
+          },
+          {
+            "min": "E",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 0,
+              "E": 88.8889,
+              "L": 9.5238,
+              "M": 1.5873
+            }
+          }
+        ],
+        "perBooster": {
+          "C": {
+            "expected": 1.2403,
+            "atLeastOnePct": 85.5718
+          },
+          "U": {
+            "expected": 1.1585,
+            "atLeastOnePct": 80.7841
+          },
+          "R": {
+            "expected": 1.4069,
+            "atLeastOnePct": 93.3321
+          },
+          "E": {
+            "expected": 1.0617,
+            "atLeastOnePct": 90.7187
+          },
+          "L": {
+            "expected": 0.1137,
+            "atLeastOnePct": 11.1901
+          },
+          "M": {
+            "expected": 0.019,
+            "atLeastOnePct": 1.8907
+          }
+        }
+      }
+    },
+    "showcase": [
+      {
+        "id": 209,
+        "name": "Kyou Souma",
+        "native": "草摩夾",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b209-NOAbiLvJt1QA.png",
+        "favourites": 10364,
+        "rank": 113,
+        "rarity": "M",
+        "num": "#0114/6736",
+        "series": "Fruits Basket",
+        "pow": 98,
+        "aura": 75
+      },
+      {
+        "id": 207,
+        "name": "Tooru Honda",
+        "native": "本田透",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b207-RQ4EUdTD0K62.png",
+        "favourites": 8943,
+        "rank": 145,
+        "rarity": "M",
+        "num": "#0146/6736",
+        "series": "Fruits Basket",
+        "pow": 98,
+        "aura": 74
+      }
+    ]
+  },
+  {
+    "id": "sport",
+    "name": "Sport",
+    "sub": "Terrains et compétitions",
+    "kanji": "球",
+    "color": "#3FBF7F",
+    "glow": "rgba(63,191,127,.35)",
+    "price": 0,
+    "series": null,
+    "chakraPrice": 175,
+    "usesFreePacks": true,
+    "slots": [
+      "C",
+      "C",
+      "C",
+      "U",
+      "R"
+    ],
+    "limit": null,
+    "schedule": null,
+    "grantOnly": false,
+    "theme": null,
+    "rateUp": null,
+    "featuredPity": null,
+    "goldenEligible": true,
+    "rates": {
+      "poolSize": 351,
+      "cardsByRarity": {
+        "C": 88,
+        "U": 85,
+        "R": 83,
+        "E": 56,
+        "L": 33,
+        "M": 6
+      },
+      "slots": [
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "U",
+          "pct": {
+            "C": 0,
+            "U": 65.8328,
+            "R": 30.0197,
+            "E": 3.6866,
+            "L": 0.395,
+            "M": 0.0658
+          }
+        },
+        {
+          "min": "R",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 87.8613,
+            "E": 10.79,
+            "L": 1.1561,
+            "M": 0.1927
+          }
+        }
+      ],
+      "perBooster": {
+        "C": {
+          "expected": 1.8605,
+          "atLeastOnePct": 94.5195,
+          "perCardPct": 2.0993
+        },
+        "U": {
+          "expected": 1.4085,
+          "atLeastOnePct": 85.5893,
+          "perCardPct": 1.6477
+        },
+        "R": {
+          "expected": 1.5209,
+          "atLeastOnePct": 94.0924,
+          "perCardPct": 1.8222
+        },
+        "E": {
+          "expected": 0.1868,
+          "atLeastOnePct": 17.6381,
+          "perCardPct": 0.3332
+        },
+        "L": {
+          "expected": 0.02,
+          "atLeastOnePct": 1.989,
+          "perCardPct": 0.0606
+        },
+        "M": {
+          "expected": 0.0033,
+          "atLeastOnePct": 0.3332,
+          "perCardPct": 0.0556
+        }
+      },
+      "pity": {
+        "threshold": 250,
+        "rarity": "M"
+      },
+      "golden": {
+        "slots": [
+          {
+            "min": "C",
+            "pct": {
+              "C": 62.0155,
+              "U": 25.0063,
+              "R": 11.4029,
+              "E": 1.4004,
+              "L": 0.15,
+              "M": 0.025
+            }
+          },
+          {
+            "min": "C",
+            "pct": {
+              "C": 62.0155,
+              "U": 25.0063,
+              "R": 11.4029,
+              "E": 1.4004,
+              "L": 0.15,
+              "M": 0.025
+            }
+          },
+          {
+            "min": "U",
+            "pct": {
+              "C": 0,
+              "U": 65.8328,
+              "R": 30.0197,
+              "E": 3.6866,
+              "L": 0.395,
+              "M": 0.0658
+            }
+          },
+          {
+            "min": "R",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 87.8613,
+              "E": 10.79,
+              "L": 1.1561,
+              "M": 0.1927
+            }
+          },
+          {
+            "min": "E",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 0,
+              "E": 88.8889,
+              "L": 9.5238,
+              "M": 1.5873
+            }
+          }
+        ],
+        "perBooster": {
+          "C": {
+            "expected": 1.2403,
+            "atLeastOnePct": 85.5718
+          },
+          "U": {
+            "expected": 1.1585,
+            "atLeastOnePct": 80.7841
+          },
+          "R": {
+            "expected": 1.4069,
+            "atLeastOnePct": 93.3321
+          },
+          "E": {
+            "expected": 1.0617,
+            "atLeastOnePct": 90.7187
+          },
+          "L": {
+            "expected": 0.1137,
+            "atLeastOnePct": 11.1901
+          },
+          "M": {
+            "expected": 0.019,
+            "atLeastOnePct": 1.8907
+          }
+        }
+      }
+    },
+    "showcase": [
+      {
+        "id": 64769,
+        "name": "Shouyou Hinata",
+        "native": "日向翔陽",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b64769-WoWlCMLLgJ14.png",
+        "favourites": 14596,
+        "rank": 63,
+        "rarity": "M",
+        "num": "#0064/6736",
+        "series": "HAIKYU!!",
+        "pow": 98,
+        "aura": 78
+      },
+      {
+        "id": 64771,
+        "name": "Tobio Kageyama",
+        "native": "影山飛雄",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b64771-BuCVs7B8bBdh.png",
+        "favourites": 12500,
+        "rank": 88,
+        "rarity": "M",
+        "num": "#0089/6736",
+        "series": "HAIKYU!!",
+        "pow": 98,
+        "aura": 77
+      }
+    ]
+  },
+  {
+    "id": "mecha",
+    "name": "Mecha",
+    "sub": "Robots géants",
+    "kanji": "機",
+    "color": "#9AA4B2",
+    "glow": "rgba(154,164,178,.35)",
+    "price": 0,
+    "series": null,
+    "chakraPrice": 175,
+    "usesFreePacks": true,
+    "slots": [
+      "C",
+      "C",
+      "C",
+      "U",
+      "R"
+    ],
+    "limit": null,
+    "schedule": null,
+    "grantOnly": false,
+    "theme": null,
+    "rateUp": null,
+    "featuredPity": null,
+    "goldenEligible": true,
+    "rates": {
+      "poolSize": 215,
+      "cardsByRarity": {
+        "C": 64,
+        "U": 46,
+        "R": 60,
+        "E": 24,
+        "L": 7,
+        "M": 14
+      },
+      "slots": [
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "U",
+          "pct": {
+            "C": 0,
+            "U": 65.8328,
+            "R": 30.0197,
+            "E": 3.6866,
+            "L": 0.395,
+            "M": 0.0658
+          }
+        },
+        {
+          "min": "R",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 87.8613,
+            "E": 10.79,
+            "L": 1.1561,
+            "M": 0.1927
+          }
+        }
+      ],
+      "perBooster": {
+        "C": {
+          "expected": 1.8605,
+          "atLeastOnePct": 94.5195,
+          "perCardPct": 2.8789
+        },
+        "U": {
+          "expected": 1.4085,
+          "atLeastOnePct": 85.5893,
+          "perCardPct": 3.0299
+        },
+        "R": {
+          "expected": 1.5209,
+          "atLeastOnePct": 94.0924,
+          "perCardPct": 2.5153
+        },
+        "E": {
+          "expected": 0.1868,
+          "atLeastOnePct": 17.6381,
+          "perCardPct": 0.7764
+        },
+        "L": {
+          "expected": 0.02,
+          "atLeastOnePct": 1.989,
+          "perCardPct": 0.2856
+        },
+        "M": {
+          "expected": 0.0033,
+          "atLeastOnePct": 0.3332,
+          "perCardPct": 0.0238
+        }
+      },
+      "pity": {
+        "threshold": 250,
+        "rarity": "M"
+      },
+      "golden": {
+        "slots": [
+          {
+            "min": "C",
+            "pct": {
+              "C": 62.0155,
+              "U": 25.0063,
+              "R": 11.4029,
+              "E": 1.4004,
+              "L": 0.15,
+              "M": 0.025
+            }
+          },
+          {
+            "min": "C",
+            "pct": {
+              "C": 62.0155,
+              "U": 25.0063,
+              "R": 11.4029,
+              "E": 1.4004,
+              "L": 0.15,
+              "M": 0.025
+            }
+          },
+          {
+            "min": "U",
+            "pct": {
+              "C": 0,
+              "U": 65.8328,
+              "R": 30.0197,
+              "E": 3.6866,
+              "L": 0.395,
+              "M": 0.0658
+            }
+          },
+          {
+            "min": "R",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 87.8613,
+              "E": 10.79,
+              "L": 1.1561,
+              "M": 0.1927
+            }
+          },
+          {
+            "min": "E",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 0,
+              "E": 88.8889,
+              "L": 9.5238,
+              "M": 1.5873
+            }
+          }
+        ],
+        "perBooster": {
+          "C": {
+            "expected": 1.2403,
+            "atLeastOnePct": 85.5718
+          },
+          "U": {
+            "expected": 1.1585,
+            "atLeastOnePct": 80.7841
+          },
+          "R": {
+            "expected": 1.4069,
+            "atLeastOnePct": 93.3321
+          },
+          "E": {
+            "expected": 1.0617,
+            "atLeastOnePct": 90.7187
+          },
+          "L": {
+            "expected": 0.1137,
+            "atLeastOnePct": 11.1901
+          },
+          "M": {
+            "expected": 0.019,
+            "atLeastOnePct": 1.8907
+          }
+        }
+      }
+    },
+    "showcase": [
+      {
+        "id": 417,
+        "name": "Lelouch Lamperouge",
+        "native": "ルルーシュ・ランペルージ",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b417-gVLmIJu9phcK.png",
+        "favourites": 28281,
+        "rank": 6,
+        "rarity": "M",
+        "num": "#0007/6736",
+        "series": "Code Geass: Lelouch of the Rebellion",
+        "pow": 99,
+        "aura": 83
+      },
+      {
+        "id": 124382,
+        "name": "Ichigo",
+        "native": "イチゴ",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b124382-bSBkjtYjJQtr.png",
+        "favourites": 15762,
+        "rank": 47,
+        "rarity": "M",
+        "num": "#0048/6736",
+        "series": "DARLING in the FRANXX",
+        "pow": 99,
+        "aura": 78
+      }
+    ]
+  },
+  {
+    "id": "waifu",
+    "name": "Waifus",
+    "sub": "Personnages féminins",
+    "kanji": "姫",
+    "color": "#FF6FAE",
+    "glow": "rgba(255,111,174,.35)",
+    "price": 0,
+    "series": null,
+    "chakraPrice": 150,
+    "usesFreePacks": true,
+    "slots": [
+      "C",
+      "C",
+      "C",
+      "U",
+      "R"
+    ],
+    "limit": null,
+    "schedule": null,
+    "grantOnly": false,
+    "theme": null,
+    "rateUp": null,
+    "featuredPity": null,
+    "goldenEligible": true,
+    "rates": {
+      "poolSize": 2909,
+      "cardsByRarity": {
+        "C": 489,
+        "U": 745,
+        "R": 896,
+        "E": 495,
+        "L": 207,
+        "M": 77
+      },
+      "slots": [
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "U",
+          "pct": {
+            "C": 0,
+            "U": 65.8328,
+            "R": 30.0197,
+            "E": 3.6866,
+            "L": 0.395,
+            "M": 0.0658
+          }
+        },
+        {
+          "min": "R",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 87.8613,
+            "E": 10.79,
+            "L": 1.1561,
+            "M": 0.1927
+          }
+        }
+      ],
+      "perBooster": {
+        "C": {
+          "expected": 1.8605,
+          "atLeastOnePct": 94.5195,
+          "perCardPct": 0.38
+        },
+        "U": {
+          "expected": 1.4085,
+          "atLeastOnePct": 85.5893,
+          "perCardPct": 0.1889
+        },
+        "R": {
+          "expected": 1.5209,
+          "atLeastOnePct": 94.0924,
+          "perCardPct": 0.1697
+        },
+        "E": {
+          "expected": 0.1868,
+          "atLeastOnePct": 17.6381,
+          "perCardPct": 0.0377
+        },
+        "L": {
+          "expected": 0.02,
+          "atLeastOnePct": 1.989,
+          "perCardPct": 0.0097
+        },
+        "M": {
+          "expected": 0.0033,
+          "atLeastOnePct": 0.3332,
+          "perCardPct": 0.0043
+        }
+      },
+      "pity": {
+        "threshold": 250,
+        "rarity": "M"
+      },
+      "golden": {
+        "slots": [
+          {
+            "min": "C",
+            "pct": {
+              "C": 62.0155,
+              "U": 25.0063,
+              "R": 11.4029,
+              "E": 1.4004,
+              "L": 0.15,
+              "M": 0.025
+            }
+          },
+          {
+            "min": "C",
+            "pct": {
+              "C": 62.0155,
+              "U": 25.0063,
+              "R": 11.4029,
+              "E": 1.4004,
+              "L": 0.15,
+              "M": 0.025
+            }
+          },
+          {
+            "min": "U",
+            "pct": {
+              "C": 0,
+              "U": 65.8328,
+              "R": 30.0197,
+              "E": 3.6866,
+              "L": 0.395,
+              "M": 0.0658
+            }
+          },
+          {
+            "min": "R",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 87.8613,
+              "E": 10.79,
+              "L": 1.1561,
+              "M": 0.1927
+            }
+          },
+          {
+            "min": "E",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 0,
+              "E": 88.8889,
+              "L": 9.5238,
+              "M": 1.5873
+            }
+          }
+        ],
+        "perBooster": {
+          "C": {
+            "expected": 1.2403,
+            "atLeastOnePct": 85.5718
+          },
+          "U": {
+            "expected": 1.1585,
+            "atLeastOnePct": 80.7841
+          },
+          "R": {
+            "expected": 1.4069,
+            "atLeastOnePct": 93.3321
+          },
+          "E": {
+            "expected": 1.0617,
+            "atLeastOnePct": 90.7187
+          },
+          "L": {
+            "expected": 0.1137,
+            "atLeastOnePct": 11.1901
+          },
+          "M": {
+            "expected": 0.019,
+            "atLeastOnePct": 1.8907
+          }
+        }
+      }
+    },
+    "showcase": [
+      {
+        "id": 88572,
+        "name": "Emilia",
+        "native": "エミリア",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b88572-IzTwXEHSobRs.jpg",
+        "favourites": 27725,
+        "rank": 7,
+        "rarity": "M",
+        "num": "#0008/6736",
+        "series": "Re:ZERO -Starting Life in Another World",
+        "pow": 99,
+        "aura": 83
+      },
+      {
+        "id": 40881,
+        "name": "Mikasa Ackerman",
+        "native": "ミカサ・アッカーマン",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b40881-F3gr1PkreDvj.png",
+        "favourites": 25504,
+        "rank": 10,
+        "rarity": "M",
+        "num": "#0011/6736",
+        "series": "Attack on Titan",
+        "pow": 99,
+        "aura": 82
+      }
+    ]
+  },
+  {
+    "id": "husbando",
+    "name": "Husbandos",
+    "sub": "Personnages masculins",
+    "kanji": "侍",
+    "color": "#4D9BFF",
+    "glow": "rgba(77,155,255,.35)",
+    "price": 0,
+    "series": null,
+    "chakraPrice": 150,
+    "usesFreePacks": true,
+    "slots": [
+      "C",
+      "C",
+      "C",
+      "U",
+      "R"
+    ],
+    "limit": null,
+    "schedule": null,
+    "grantOnly": false,
+    "theme": null,
+    "rateUp": null,
+    "featuredPity": null,
+    "goldenEligible": true,
+    "rates": {
+      "poolSize": 2764,
+      "cardsByRarity": {
+        "C": 580,
+        "U": 683,
+        "R": 669,
+        "E": 458,
+        "L": 251,
+        "M": 123
+      },
+      "slots": [
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "U",
+          "pct": {
+            "C": 0,
+            "U": 65.8328,
+            "R": 30.0197,
+            "E": 3.6866,
+            "L": 0.395,
+            "M": 0.0658
+          }
+        },
+        {
+          "min": "R",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 87.8613,
+            "E": 10.79,
+            "L": 1.1561,
+            "M": 0.1927
+          }
+        }
+      ],
+      "perBooster": {
+        "C": {
+          "expected": 1.8605,
+          "atLeastOnePct": 94.5195,
+          "perCardPct": 0.3204
+        },
+        "U": {
+          "expected": 1.4085,
+          "atLeastOnePct": 85.5893,
+          "perCardPct": 0.2061
+        },
+        "R": {
+          "expected": 1.5209,
+          "atLeastOnePct": 94.0924,
+          "perCardPct": 0.2272
+        },
+        "E": {
+          "expected": 0.1868,
+          "atLeastOnePct": 17.6381,
+          "perCardPct": 0.0408
+        },
+        "L": {
+          "expected": 0.02,
+          "atLeastOnePct": 1.989,
+          "perCardPct": 0.008
+        },
+        "M": {
+          "expected": 0.0033,
+          "atLeastOnePct": 0.3332,
+          "perCardPct": 0.0027
+        }
+      },
+      "pity": {
+        "threshold": 250,
+        "rarity": "M"
+      },
+      "golden": {
+        "slots": [
+          {
+            "min": "C",
+            "pct": {
+              "C": 62.0155,
+              "U": 25.0063,
+              "R": 11.4029,
+              "E": 1.4004,
+              "L": 0.15,
+              "M": 0.025
+            }
+          },
+          {
+            "min": "C",
+            "pct": {
+              "C": 62.0155,
+              "U": 25.0063,
+              "R": 11.4029,
+              "E": 1.4004,
+              "L": 0.15,
+              "M": 0.025
+            }
+          },
+          {
+            "min": "U",
+            "pct": {
+              "C": 0,
+              "U": 65.8328,
+              "R": 30.0197,
+              "E": 3.6866,
+              "L": 0.395,
+              "M": 0.0658
+            }
+          },
+          {
+            "min": "R",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 87.8613,
+              "E": 10.79,
+              "L": 1.1561,
+              "M": 0.1927
+            }
+          },
+          {
+            "min": "E",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 0,
+              "E": 88.8889,
+              "L": 9.5238,
+              "M": 1.5873
+            }
+          }
+        ],
+        "perBooster": {
+          "C": {
+            "expected": 1.2403,
+            "atLeastOnePct": 85.5718
+          },
+          "U": {
+            "expected": 1.1585,
+            "atLeastOnePct": 80.7841
+          },
+          "R": {
+            "expected": 1.4069,
+            "atLeastOnePct": 93.3321
+          },
+          "E": {
+            "expected": 1.0617,
+            "atLeastOnePct": 90.7187
+          },
+          "L": {
+            "expected": 0.1137,
+            "atLeastOnePct": 11.1901
+          },
+          "M": {
+            "expected": 0.019,
+            "atLeastOnePct": 1.8907
+          }
+        }
+      }
+    },
+    "showcase": [
+      {
+        "id": 127691,
+        "name": "Satoru Gojou",
+        "native": "五条悟",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b127691-9zqh1xpIubn7.png",
+        "favourites": 39257,
+        "rank": 0,
+        "rarity": "M",
+        "num": "#0001/6736",
+        "series": "JUJUTSU KAISEN",
+        "pow": 99,
+        "aura": 86
+      },
+      {
+        "id": 45627,
+        "name": "Levi",
+        "native": "リヴァイ",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b45627-CR68RyZmddGG.png",
+        "favourites": 38199,
+        "rank": 1,
+        "rarity": "M",
+        "num": "#0002/6736",
+        "series": "Attack on Titan",
+        "pow": 99,
+        "aura": 86
+      }
+    ]
+  },
+  {
+    "id": "banner-jjk",
+    "name": "Bannière Jujutsu Kaisen",
+    "sub": "Rate-up 14 jours",
+    "kanji": "呪",
+    "color": "#B072FF",
+    "glow": "rgba(176,114,255,.35)",
+    "price": 200,
+    "series": null,
+    "chakraPrice": 200,
+    "usesFreePacks": false,
+    "slots": [
+      "C",
+      "C",
+      "C",
+      "U",
+      "R"
+    ],
+    "limit": null,
+    "schedule": {
+      "start": "2026-10-04T00:00:00+02:00",
+      "end": "2026-10-18T00:00:00+02:00"
+    },
+    "grantOnly": false,
+    "theme": null,
+    "rateUp": {
+      "characterIds": [
+        127691,
+        127212,
+        126635,
+        133704,
+        133700,
+        134167,
+        133701,
+        129571
+      ],
+      "rarities": [
+        "M"
+      ],
+      "share": 0.5
+    },
+    "featuredPity": 100,
+    "goldenEligible": true,
+    "rates": {
+      "poolSize": 6457,
+      "cardsByRarity": {
+        "C": 1418,
+        "U": 1671,
+        "R": 1684,
+        "E": 1010,
+        "L": 471,
+        "M": 203
+      },
+      "slots": [
+        {
+          "min": "C",
+          "pct": {
+            "C": 61.5385,
+            "U": 24.8139,
+            "R": 11.3151,
+            "E": 1.9851,
+            "L": 0.2978,
+            "M": 0.0496
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 61.5385,
+            "U": 24.8139,
+            "R": 11.3151,
+            "E": 1.9851,
+            "L": 0.2978,
+            "M": 0.0496
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 61.5385,
+            "U": 24.8139,
+            "R": 11.3151,
+            "E": 1.9851,
+            "L": 0.2978,
+            "M": 0.0496
+          }
+        },
+        {
+          "min": "U",
+          "pct": {
+            "C": 0,
+            "U": 64.5161,
+            "R": 29.4194,
+            "E": 5.1613,
+            "L": 0.7742,
+            "M": 0.129
+          }
+        },
+        {
+          "min": "R",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 82.9091,
+            "E": 14.5455,
+            "L": 2.1818,
+            "M": 0.3636
+          }
+        }
+      ],
+      "perBooster": {
+        "C": {
+          "expected": 1.8462,
+          "atLeastOnePct": 94.3104,
+          "perCardPct": 0.1301
+        },
+        "U": {
+          "expected": 1.3896,
+          "atLeastOnePct": 84.9185,
+          "perCardPct": 0.0831
+        },
+        "R": {
+          "expected": 1.4627,
+          "atLeastOnePct": 91.5861,
+          "perCardPct": 0.0868
+        },
+        "E": {
+          "expected": 0.2566,
+          "atLeastOnePct": 23.6873,
+          "perCardPct": 0.0254
+        },
+        "L": {
+          "expected": 0.0385,
+          "atLeastOnePct": 3.8036,
+          "perCardPct": 0.0082
+        },
+        "M": {
+          "expected": 0.0064,
+          "atLeastOnePct": 0.6403,
+          "perCardPct": 0.0032
+        }
+      },
+      "pity": {
+        "threshold": 250,
+        "rarity": "M"
+      },
+      "golden": {
+        "slots": [
+          {
+            "min": "C",
+            "pct": {
+              "C": 61.5385,
+              "U": 24.8139,
+              "R": 11.3151,
+              "E": 1.9851,
+              "L": 0.2978,
+              "M": 0.0496
+            }
+          },
+          {
+            "min": "C",
+            "pct": {
+              "C": 61.5385,
+              "U": 24.8139,
+              "R": 11.3151,
+              "E": 1.9851,
+              "L": 0.2978,
+              "M": 0.0496
+            }
+          },
+          {
+            "min": "U",
+            "pct": {
+              "C": 0,
+              "U": 64.5161,
+              "R": 29.4194,
+              "E": 5.1613,
+              "L": 0.7742,
+              "M": 0.129
+            }
+          },
+          {
+            "min": "R",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 82.9091,
+              "E": 14.5455,
+              "L": 2.1818,
+              "M": 0.3636
+            }
+          },
+          {
+            "min": "E",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 0,
+              "E": 85.1064,
+              "L": 12.766,
+              "M": 2.1277
+            }
+          }
+        ],
+        "perBooster": {
+          "C": {
+            "expected": 1.2308,
+            "atLeastOnePct": 85.2071
+          },
+          "U": {
+            "expected": 1.1414,
+            "atLeastOnePct": 79.9411
+          },
+          "R": {
+            "expected": 1.3496,
+            "atLeastOnePct": 90.5125
+          },
+          "E": {
+            "expected": 1.0878,
+            "atLeastOnePct": 88.4041
+          },
+          "L": {
+            "expected": 0.1632,
+            "atLeastOnePct": 15.8334
+          },
+          "M": {
+            "expected": 0.0272,
+            "atLeastOnePct": 2.706
+          }
+        }
+      }
+    },
+    "showcase": [
+      {
+        "id": 127691,
+        "name": "Satoru Gojou",
+        "native": "五条悟",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b127691-9zqh1xpIubn7.png",
+        "favourites": 39257,
+        "rank": 0,
+        "rarity": "M",
+        "num": "#0001/6736",
+        "series": "JUJUTSU KAISEN",
+        "pow": 99,
+        "aura": 86
+      },
+      {
+        "id": 127212,
+        "name": "Yuuji Itadori",
+        "native": "虎杖悠仁",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b127212-FVm2tD0erQ5B.png",
+        "favourites": 21171,
+        "rank": 21,
+        "rarity": "M",
+        "num": "#0022/6736",
+        "series": "JUJUTSU KAISEN",
+        "pow": 99,
+        "aura": 81
+      }
+    ]
+  },
+  {
+    "id": "season-2026-fall",
+    "name": "Automne 2026",
+    "sub": "Animes de la saison",
+    "kanji": "秋",
+    "color": "#E07A2F",
+    "glow": "rgba(224,122,47,.35)",
+    "price": 0,
+    "series": null,
+    "chakraPrice": 175,
+    "usesFreePacks": true,
+    "slots": [
+      "C",
+      "C",
+      "C",
+      "U",
+      "R"
+    ],
+    "limit": null,
+    "schedule": {
+      "start": "2026-10-01T00:00:00+02:00",
+      "end": "2027-01-01T00:00:00+01:00"
+    },
+    "grantOnly": false,
+    "theme": null,
+    "rateUp": null,
+    "featuredPity": null,
+    "goldenEligible": true,
+    "rates": {
+      "poolSize": 180,
+      "cardsByRarity": {
+        "C": 92,
+        "U": 33,
+        "R": 20,
+        "E": 12,
+        "L": 14,
+        "M": 9
+      },
+      "slots": [
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "C",
+          "pct": {
+            "C": 62.0155,
+            "U": 25.0063,
+            "R": 11.4029,
+            "E": 1.4004,
+            "L": 0.15,
+            "M": 0.025
+          }
+        },
+        {
+          "min": "U",
+          "pct": {
+            "C": 0,
+            "U": 65.8328,
+            "R": 30.0197,
+            "E": 3.6866,
+            "L": 0.395,
+            "M": 0.0658
+          }
+        },
+        {
+          "min": "R",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 87.8613,
+            "E": 10.79,
+            "L": 1.1561,
+            "M": 0.1927
+          }
+        }
+      ],
+      "perBooster": {
+        "C": {
+          "expected": 1.8605,
+          "atLeastOnePct": 94.5195,
+          "perCardPct": 2.0086
+        },
+        "U": {
+          "expected": 1.4085,
+          "atLeastOnePct": 85.5893,
+          "perCardPct": 4.206
+        },
+        "R": {
+          "expected": 1.5209,
+          "atLeastOnePct": 94.0924,
+          "perCardPct": 7.4297
+        },
+        "E": {
+          "expected": 0.1868,
+          "atLeastOnePct": 17.6381,
+          "perCardPct": 1.5491
+        },
+        "L": {
+          "expected": 0.02,
+          "atLeastOnePct": 1.989,
+          "perCardPct": 0.1429
+        },
+        "M": {
+          "expected": 0.0033,
+          "atLeastOnePct": 0.3332,
+          "perCardPct": 0.0371
+        }
+      },
+      "pity": {
+        "threshold": 250,
+        "rarity": "M"
+      },
+      "golden": {
+        "slots": [
+          {
+            "min": "C",
+            "pct": {
+              "C": 62.0155,
+              "U": 25.0063,
+              "R": 11.4029,
+              "E": 1.4004,
+              "L": 0.15,
+              "M": 0.025
+            }
+          },
+          {
+            "min": "C",
+            "pct": {
+              "C": 62.0155,
+              "U": 25.0063,
+              "R": 11.4029,
+              "E": 1.4004,
+              "L": 0.15,
+              "M": 0.025
+            }
+          },
+          {
+            "min": "U",
+            "pct": {
+              "C": 0,
+              "U": 65.8328,
+              "R": 30.0197,
+              "E": 3.6866,
+              "L": 0.395,
+              "M": 0.0658
+            }
+          },
+          {
+            "min": "R",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 87.8613,
+              "E": 10.79,
+              "L": 1.1561,
+              "M": 0.1927
+            }
+          },
+          {
+            "min": "E",
+            "pct": {
+              "C": 0,
+              "U": 0,
+              "R": 0,
+              "E": 88.8889,
+              "L": 9.5238,
+              "M": 1.5873
+            }
+          }
+        ],
+        "perBooster": {
+          "C": {
+            "expected": 1.2403,
+            "atLeastOnePct": 85.5718
+          },
+          "U": {
+            "expected": 1.1585,
+            "atLeastOnePct": 80.7841
+          },
+          "R": {
+            "expected": 1.4069,
+            "atLeastOnePct": 93.3321
+          },
+          "E": {
+            "expected": 1.0617,
+            "atLeastOnePct": 90.7187
+          },
+          "L": {
+            "expected": 0.1137,
+            "atLeastOnePct": 11.1901
+          },
+          "M": {
+            "expected": 0.019,
+            "atLeastOnePct": 1.8907
+          }
+        }
+      }
+    },
+    "showcase": [
+      {
+        "id": 126824,
+        "name": "Maomao",
+        "native": "猫猫",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b126824-MqsCncTO1qpv.png",
+        "favourites": 22544,
+        "rank": 13,
+        "rarity": "M",
+        "num": "#0014/6736",
+        "series": "The Apothecary Diaries",
+        "pow": 99,
+        "aura": 81
+      },
+      {
+        "id": 127222,
+        "name": "Mai Sakurajima",
+        "native": "桜島麻衣",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b127222-Jh5hhP7vZ7s1.png",
+        "favourites": 21176,
+        "rank": 20,
+        "rarity": "M",
+        "num": "#0021/6736",
+        "series": "Rascal Does Not Dream of Bunny Girl Senpai",
+        "pow": 99,
+        "aura": 81
+      }
+    ]
+  },
+  {
+    "id": "seal-mythic",
+    "name": "Sceau mythique",
+    "sub": "4 cartes · Mythique garantie",
+    "kanji": "神",
+    "color": "#FF4D2E",
+    "glow": "rgba(255,77,46,.45)",
+    "price": 0,
+    "series": null,
+    "chakraPrice": 0,
+    "usesFreePacks": false,
+    "slots": [
+      "R",
+      "E",
+      "L",
+      "M"
+    ],
+    "limit": null,
+    "schedule": null,
+    "grantOnly": true,
+    "theme": null,
+    "rateUp": null,
+    "featuredPity": null,
+    "goldenEligible": false,
+    "rates": {
+      "poolSize": 6457,
+      "cardsByRarity": {
+        "C": 1418,
+        "U": 1671,
+        "R": 1684,
+        "E": 1010,
+        "L": 471,
+        "M": 203
+      },
+      "slots": [
+        {
+          "min": "R",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 87.8613,
+            "E": 10.79,
+            "L": 1.1561,
+            "M": 0.1927
+          }
+        },
+        {
+          "min": "E",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 0,
+            "E": 88.8889,
+            "L": 9.5238,
+            "M": 1.5873
+          }
+        },
+        {
+          "min": "L",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 0,
+            "E": 0,
+            "L": 85.7143,
+            "M": 14.2857
+          }
+        },
+        {
+          "min": "M",
+          "pct": {
+            "C": 0,
+            "U": 0,
+            "R": 0,
+            "E": 0,
+            "L": 0,
+            "M": 100
+          }
+        }
+      ],
+      "perBooster": {
+        "C": {
+          "expected": 0,
+          "atLeastOnePct": 0,
+          "perCardPct": 0
+        },
+        "U": {
+          "expected": 0,
+          "atLeastOnePct": 0,
+          "perCardPct": 0
+        },
+        "R": {
+          "expected": 0.8786,
+          "atLeastOnePct": 87.8613,
+          "perCardPct": 0.0522
+        },
+        "E": {
+          "expected": 0.9968,
+          "atLeastOnePct": 90.0878,
+          "perCardPct": 0.0987
+        },
+        "L": {
+          "expected": 0.9639,
+          "atLeastOnePct": 87.2243,
+          "perCardPct": 0.2046
+        },
+        "M": {
+          "expected": 1.1607,
+          "atLeastOnePct": 100,
+          "perCardPct": 0.5714
+        }
+      },
+      "pity": {
+        "threshold": 250,
+        "rarity": "M"
+      },
+      "golden": null
+    },
+    "showcase": [
+      {
+        "id": 127691,
+        "name": "Satoru Gojou",
+        "native": "五条悟",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b127691-9zqh1xpIubn7.png",
+        "favourites": 39257,
+        "rank": 0,
+        "rarity": "M",
+        "num": "#0001/6736",
+        "series": "JUJUTSU KAISEN",
+        "pow": 99,
+        "aura": 86
+      },
+      {
+        "id": 45627,
+        "name": "Levi",
+        "native": "リヴァイ",
+        "image": "https://s4.anilist.co/file/anilistcdn/character/large/b45627-CR68RyZmddGG.png",
+        "favourites": 38199,
+        "rank": 1,
+        "rarity": "M",
+        "num": "#0002/6736",
+        "series": "Attack on Titan",
+        "pow": 99,
+        "aura": 86
+      }
+    ]
+  }
+]

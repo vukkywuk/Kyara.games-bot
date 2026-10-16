@@ -1,0 +1,114 @@
+{
+  "id": "catalog-2026-10-04",
+  "at": "2026-09-01T00:00:00.000Z",
+  "removed": 692,
+  "heritage": 660,
+  "before": 6381,
+  "after": 6736,
+  "series": [
+    {
+      "name": "ONE PIECE",
+      "before": 70,
+      "after": 195
+    },
+    {
+      "name": "Naruto",
+      "before": 62,
+      "after": 119
+    },
+    {
+      "name": "Bleach",
+      "before": 45,
+      "after": 92
+    },
+    {
+      "name": "Hunter x Hunter",
+      "before": 39,
+      "after": 74
+    },
+    {
+      "name": "My Hero Academia",
+      "before": 59,
+      "after": 94
+    },
+    {
+      "name": "Black Clover",
+      "before": 32,
+      "after": 62
+    },
+    {
+      "name": "Umamusume: Pretty Derby",
+      "before": 26,
+      "after": 56
+    },
+    {
+      "name": "Mobile Suit Gundam",
+      "before": 15,
+      "after": 39
+    },
+    {
+      "name": "Pokémon",
+      "before": 15,
+      "after": 38
+    },
+    {
+      "name": "Gintama",
+      "before": 30,
+      "after": 52
+    },
+    {
+      "name": "A Certain Magical Index",
+      "before": 12,
+      "after": 34
+    },
+    {
+      "name": "Detective Conan",
+      "before": 15,
+      "after": 36
+    }
+  ],
+  "upgrades": [],
+  "addedCount": 1047,
+  "upgraded": [],
+  "samples": [
+    {
+      "id": 9770,
+      "name": "Paikuhan",
+      "native": "パイクーハン",
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/9770.jpg",
+      "favourites": 42,
+      "rank": 6336,
+      "rarity": "C",
+      "num": "#6337/6736",
+      "series": "Dragon Ball",
+      "pow": 44,
+      "aura": 31
+    },
+    {
+      "id": 124690,
+      "name": "Henry Legolant",
+      "native": "ヘンリー・レゴラント",
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b124690-agQVNP3afoXA.png",
+      "favourites": 198,
+      "rank": 4740,
+      "rarity": "U",
+      "num": "#4741/6736",
+      "series": "Black Clover",
+      "pow": 57,
+      "aura": 43
+    },
+    {
+      "id": 127133,
+      "name": "Kouta Nakanishi",
+      "native": "中西 宏太",
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/127133-cv5w71hVhEDs.jpg",
+      "favourites": 51,
+      "rank": 6104,
+      "rarity": "C",
+      "num": "#6105/6736",
+      "series": "The Disastrous Life of Saiki K.",
+      "pow": 46,
+      "aura": 32
+    }
+  ]
+}

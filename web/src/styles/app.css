@@ -1,0 +1,176 @@
+@import 'tailwindcss';
+
+/*
+ * Kyara design tokens.
+ * - Ink (indigo night) surfaces, washi (paper) text.
+ * - Colour carries meaning only: the six rarity colours come from Kyara itself.
+ * - Unbounded for display and numbers, Zen Kaku Gothic New for UI and Japanese names.
+ */
+@theme {
+  --color-ink-0: #0f1424; /* page */
+  --color-ink-1: #141a2c; /* rail, panels */
+  --color-ink-2: #1b2238; /* raised: inputs, hover */
+  --color-ink-3: #232c48; /* pressed, selected */
+  --color-line: #28304c;
+  --color-line-strong: #3a4466;
+  --color-washi: #ede8de;
+  --color-washi-dim: #c9c4ba;
+  --color-muted: #9aa2b8;
+  --color-faint: #6d7591;
+
+  --color-ok: #3fbf7f;
+  --color-warn: #f5c518;
+  --color-bad: #e5675e;
+  --color-focus: #8fb4ff;
+  --color-seal: #ff4d2e;
+  --color-washi-hi: #fbf8f1; /* hover of paper surfaces */
+  --color-scrim: rgb(6 9 18 / 0.72); /* behind dialogs, drawers and the reveal */
+  --color-seal-bg: rgb(15 20 36 / 0.82); /* seal plate over artwork */
+
+  /* Rarity (Kyara's own palette) */
+  --color-r-c: #b5b1bb;
+  --color-r-u: #3fbf7f;
+  --color-r-r: #4d9bff;
+  --color-r-e: #b072ff;
+  --color-r-l: #f5c518;
+  --color-r-m: #ff4d2e;
+
+  --font-display: 'Unbounded', 'Zen Kaku Gothic New', system-ui, sans-serif;
+  --font-sans: 'Zen Kaku Gothic New', 'Yu Gothic UI', 'Hiragino Sans', 'Segoe UI', system-ui, sans-serif;
+
+  /* Type scale (1.2 minor third from 14px UI base) */
+  --text-2xs: 11px;
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-base: 14px;
+  --text-md: 16px;
+  --text-lg: 19px;
+  --text-xl: 23px;
+  --text-2xl: 28px;
+  --text-3xl: 40px;
+
+  /* Radius hierarchy: chips < controls < panels; artwork keeps a crisp 3px */
+  --radius-chip: 3px;
+  --radius-art: 3px;
+  --radius-ctl: 6px;
+  --radius-panel: 8px;
+
+  --shadow-pop: 0 18px 40px -12px rgb(3 6 16 / 0.7), 0 0 0 1px rgb(58 68 102 / 0.5);
+
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 900px;
+  --breakpoint-lg: 1200px;
+  --breakpoint-xl: 1500px;
+}
+
+:root {
+  --dur-fast: 140ms;
+  --dur-base: 220ms;
+  --dur-slow: 360ms;
+  --rail-w: 232px;
+  --rail-w-collapsed: 64px;
+  --topbar-h: 56px;
+  color-scheme: dark;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    background: var(--color-ink-0);
+    color: var(--color-washi);
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: rgb(143 180 255 / 0.35);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  button,
+  [role='button'],
+  a {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+  input,
+  select,
+  textarea,
+  button {
+    font: inherit;
+    color: inherit;
+  }
+  .num {
+    font-variant-numeric: tabular-nums;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-line);
+    border-radius: 10px;
+    border: 2px solid var(--color-ink-0);
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@layer components {
+  .vertical-name {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    letter-spacing: 0.08em;
+  }
+  .skeleton {
+    background: linear-gradient(90deg, var(--color-ink-1) 0%, var(--color-ink-2) 50%, var(--color-ink-1) 100%);
+    background-size: 200% 100%;
+    animation: skeleton 1.4s ease-in-out infinite;
+  }
+  .sr-only-focusable:not(:focus) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+}
+
+@keyframes skeleton {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .skeleton {
+    animation: none;
+  }
+}

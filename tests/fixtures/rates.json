@@ -1,0 +1,56 @@
+[
+  {
+    "rarity": "C",
+    "label": "Commune",
+    "color": "#B5B1BB",
+    "pct": 62.016,
+    "boosterPct": 94.5195,
+    "expectedPerBooster": 1.8605,
+    "perCardBoosterPct": 0.1311
+  },
+  {
+    "rarity": "U",
+    "label": "Peu commune",
+    "color": "#3FBF7F",
+    "pct": 25.006,
+    "boosterPct": 85.5893,
+    "expectedPerBooster": 1.4085,
+    "perCardBoosterPct": 0.0843
+  },
+  {
+    "rarity": "R",
+    "label": "Rare",
+    "color": "#4D9BFF",
+    "pct": 11.403,
+    "boosterPct": 94.0924,
+    "expectedPerBooster": 1.5209,
+    "perCardBoosterPct": 0.0903
+  },
+  {
+    "rarity": "E",
+    "label": "Épique",
+    "color": "#B072FF",
+    "pct": 1.4,
+    "boosterPct": 17.6381,
+    "expectedPerBooster": 0.1868,
+    "perCardBoosterPct": 0.0185
+  },
+  {
+    "rarity": "L",
+    "label": "Légendaire",
+    "color": "#F5C518",
+    "pct": 0.15,
+    "boosterPct": 1.989,
+    "expectedPerBooster": 0.02,
+    "perCardBoosterPct": 0.0042
+  },
+  {
+    "rarity": "M",
+    "label": "Mythique",
+    "color": "#FF4D2E",
+    "pct": 0.025,
+    "boosterPct": 0.3332,
+    "expectedPerBooster": 0.0033,
+    "perCardBoosterPct": 0.0016
+  }
+]

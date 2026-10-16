@@ -1,0 +1,27 @@
+node_modules/
+dist/
+coverage/
+
+# Secrets and session state: never commit
+.env
+.env.*
+!.env.example
+.kyara/
+*.session.json
+storage-state*.json
+
+# Diagnostics may contain page content
+diagnostics/
+playwright-report/
+test-results/
+
+# Build outputs of the web app and the browser extension (rebuild with npm run build)
+web/dist/
+extension/dist/
+
+# Desktop app build output and installers (npm run desktop:dist)
+desktop/app/
+desktop/release/
+
+# Local Claude Code tooling (skills, agents), not part of the bot
+.claude/
